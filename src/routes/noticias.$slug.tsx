@@ -71,7 +71,7 @@ function NoticiaPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <ShareButtons url={url} title={noticia.titulo} />
           <div className="mt-10 space-y-6 text-[17px] leading-[1.8] text-foreground/85">
-            {noticia.conteudo.map((p, i) => (
+            {noticia.conteudo.map((p: string, i: number) => (
               <p key={i}>{p}</p>
             ))}
           </div>
