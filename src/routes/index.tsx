@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Heart, Coins, Package, Apple } from "lucide-react";
+import { ArrowRight, Coins, Package, Apple } from "lucide-react";
 import { IMAGES, AREAS, PROJETOS, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
