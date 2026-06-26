@@ -22,9 +22,9 @@ export function AccessibilityButton() {
         onClick={() => setOpen(true)}
         aria-label="Abrir painel de acessibilidade"
         title="Acessibilidade"
-        className="grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-[#C75A32] text-white shadow-lg ring-1 ring-black/10 hover:scale-110 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-[#C75A32]/40"
+        className="grid h-11 w-11 sm:h-12 sm:w-12 place-items-center rounded-full bg-[#D85F35] text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] ring-1 ring-black/10 hover:scale-110 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-[#D85F35]/40"
       >
-        <Accessibility className="h-5 w-5 sm:h-6 sm:w-6" />
+        <Accessibility className="h-5 w-5" />
       </button>
       <AccessibilityPanel open={open} onClose={() => setOpen(false)} state={state} setState={setState} />
     </>
