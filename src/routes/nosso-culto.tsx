@@ -62,24 +62,23 @@ function NossoCulto() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate flex min-h-[50vh] items-end overflow-hidden pt-20 lg:min-h-[65vh]">
+      <section className="relative isolate flex min-h-[44vh] items-end overflow-hidden pt-20 lg:min-h-[56vh]">
         <img
           src={IMAGES.ceremony}
           alt="Espaço sagrado de tradição afro-brasileira e preservação ancestral"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/40" />
-        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="flex items-center gap-3">
-            <span aria-hidden className="h-px w-10 bg-brand-gold sm:w-14" />
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
-              Tradição e ancestralidade
-            </div>
+        <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
+            Tradição e ancestralidade
           </div>
           <h1 className="mt-6 max-w-4xl text-[32px] font-bold leading-[1.1] text-white sm:text-[44px] lg:text-[56px]">
-            Nosso culto
+            <span className="relative inline-block">
+              <span aria-hidden className="absolute inset-0 -skew-x-6 bg-gradient-gold" />
+              <span className="relative z-10 px-3 text-brand-dark">Nosso culto</span>
+            </span>
           </h1>
-          <div aria-hidden className="mt-5 h-[3px] w-20 rounded-full bg-gradient-warm sm:w-24" />
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90 sm:text-lg">
             Conheça as tradições, fundamentos e expressões espirituais que
             orientam o Hùnkpámè Hùndésô como espaço de fé, ancestralidade,
@@ -128,7 +127,7 @@ function NossoCulto() {
           <img
             src={IMAGES.ceremony}
             alt="Espaço sagrado de tradição afro-brasileira e preservação ancestral"
-            className="h-60 w-full rounded-3xl object-cover shadow-xl sm:h-80 lg:h-[400px] xl:h-[440px]"
+            className="h-56 w-full rounded-3xl object-cover shadow-xl sm:h-72 lg:h-[340px] xl:h-[360px]"
           />
         </div>
       </section>
@@ -196,7 +195,7 @@ function NossoCulto() {
           <img
             src={IMAGES.workshop}
             alt="Elementos da natureza associados à espiritualidade, memória e saberes tradicionais"
-            className="h-60 w-full rounded-3xl object-cover shadow-xl sm:h-80 lg:h-[400px] xl:h-[440px]"
+            className="h-56 w-full rounded-3xl object-cover shadow-xl sm:h-72 lg:h-[340px] xl:h-[360px]"
           />
         </div>
       </section>
@@ -256,27 +255,27 @@ function NossoCulto() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
+      <section className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#9A4A2F_0%,#6B3F24_55%,#C9953B_100%)]" />
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-[28px] font-bold leading-tight text-white sm:text-[36px] lg:text-[44px]">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-[26px] font-bold leading-tight text-white sm:text-[32px] lg:text-[38px]">
             Ancestralidade que orienta, fortalece e preserva
           </h2>
-          <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-[1.7] text-white/90 sm:text-[17px]">
+          <p className="mx-auto mt-4 max-w-[680px] text-[15px] leading-[1.65] text-white/90 sm:text-[16px]">
             A vivência espiritual da Família Hùndésô reafirma o compromisso com
             a memória, com a natureza, com os saberes tradicionais e com a
             continuidade das tradições de matriz africana e indígena.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/quem-somos"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-brand-earth shadow-lg transition hover:brightness-105 sm:text-sm"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-white px-5 text-xs font-bold uppercase tracking-[0.08em] text-brand-earth shadow-lg transition hover:brightness-105 sm:text-sm"
             >
               Voltar para Quem Somos
             </Link>
             <Link
               to="/projetos"
-              className="inline-flex items-center justify-center rounded-full bg-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-lg ring-1 ring-white/20 transition hover:bg-black sm:text-sm"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-brand-dark px-5 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-lg ring-1 ring-white/20 transition hover:bg-black sm:text-sm"
             >
               Conhecer projetos
             </Link>
