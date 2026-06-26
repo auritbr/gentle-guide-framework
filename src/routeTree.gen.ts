@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -25,6 +26,11 @@ const TransparenciaRoute = TransparenciaRouteImport.update({
 const QuemSomosRoute = QuemSomosRouteImport.update({
   id: '/quem-somos',
   path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/projetos': typeof ProjetosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/projetos': typeof ProjetosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/projetos': typeof ProjetosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   NoticiasRoute: typeof NoticiasRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
+  ProjetosRoute: typeof ProjetosRoute
   QuemSomosRoute: typeof QuemSomosRoute
   TransparenciaRoute: typeof TransparenciaRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/quem-somos'
       fullPath: '/quem-somos'
       preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-que-fazemos': {
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   NoticiasRoute: NoticiasRoute,
   OQueFazemosRoute: OQueFazemosRoute,
+  ProjetosRoute: ProjetosRoute,
   QuemSomosRoute: QuemSomosRoute,
   TransparenciaRoute: TransparenciaRoute,
 }
