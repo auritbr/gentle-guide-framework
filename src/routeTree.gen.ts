@@ -23,6 +23,7 @@ import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ComoAjudarIndexRouteImport } from './routes/como-ajudar.index'
 import { Route as ProjetosPresidenteRouteImport } from './routes/projetos.presidente'
+import { Route as ProjetosMaracatuRouteImport } from './routes/projetos.maracatu'
 import { Route as ProjetosLgbtqiaRouteImport } from './routes/projetos.lgbtqia'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
@@ -101,6 +102,11 @@ const ProjetosPresidenteRoute = ProjetosPresidenteRouteImport.update({
   path: '/presidente',
   getParentRoute: () => ProjetosRoute,
 } as any)
+const ProjetosMaracatuRoute = ProjetosMaracatuRouteImport.update({
+  id: '/maracatu',
+  path: '/maracatu',
+  getParentRoute: () => ProjetosRoute,
+} as any)
 const ProjetosLgbtqiaRoute = ProjetosLgbtqiaRouteImport.update({
   id: '/lgbtqia',
   path: '/lgbtqia',
@@ -157,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/maracatu': typeof ProjetosMaracatuRoute
   '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
@@ -178,6 +185,7 @@ export interface FileRoutesByTo {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/maracatu': typeof ProjetosMaracatuRoute
   '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar': typeof ComoAjudarIndexRoute
   '/noticias': typeof NoticiasIndexRoute
@@ -202,6 +210,7 @@ export interface FileRoutesById {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/maracatu': typeof ProjetosMaracatuRoute
   '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
@@ -227,6 +236,7 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/projetos/lgbtqia'
+    | '/projetos/maracatu'
     | '/projetos/presidente'
     | '/como-ajudar/'
     | '/noticias/'
@@ -248,6 +258,7 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/projetos/lgbtqia'
+    | '/projetos/maracatu'
     | '/projetos/presidente'
     | '/como-ajudar'
     | '/noticias'
@@ -271,6 +282,7 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/projetos/lgbtqia'
+    | '/projetos/maracatu'
     | '/projetos/presidente'
     | '/como-ajudar/'
     | '/noticias/'
@@ -395,6 +407,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetosPresidenteRouteImport
       parentRoute: typeof ProjetosRoute
     }
+    '/projetos/maracatu': {
+      id: '/projetos/maracatu'
+      path: '/maracatu'
+      fullPath: '/projetos/maracatu'
+      preLoaderRoute: typeof ProjetosMaracatuRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
     '/projetos/lgbtqia': {
       id: '/projetos/lgbtqia'
       path: '/lgbtqia'
@@ -464,6 +483,7 @@ const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(
 interface ProjetosRouteChildren {
   ProjetosSlugRoute: typeof ProjetosSlugRoute
   ProjetosLgbtqiaRoute: typeof ProjetosLgbtqiaRoute
+  ProjetosMaracatuRoute: typeof ProjetosMaracatuRoute
   ProjetosPresidenteRoute: typeof ProjetosPresidenteRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
 }
@@ -471,6 +491,7 @@ interface ProjetosRouteChildren {
 const ProjetosRouteChildren: ProjetosRouteChildren = {
   ProjetosSlugRoute: ProjetosSlugRoute,
   ProjetosLgbtqiaRoute: ProjetosLgbtqiaRoute,
+  ProjetosMaracatuRoute: ProjetosMaracatuRoute,
   ProjetosPresidenteRoute: ProjetosPresidenteRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
 }
