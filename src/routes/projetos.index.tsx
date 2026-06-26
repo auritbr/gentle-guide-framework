@@ -75,11 +75,11 @@ function ProjetosPage() {
                 <div className="flex flex-1 flex-col p-6">
                   <span className="text-[11px] uppercase tracking-[0.22em] font-semibold text-brand-earth">{p.label}</span>
                   <h3 className="mt-2 font-display text-xl font-bold text-brand-dark">{p.titulo}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/70 line-clamp-5">{p.resumo}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/70">{p.resumo}</p>
                   <Link
                     to="/projetos/$slug"
                     params={{ slug: p.slug }}
-                    className="mt-5 inline-flex items-center gap-2 self-start rounded-full bg-brand-dark px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-brand-earth transition-colors"
+                    className="mt-auto pt-5 inline-flex items-center gap-2 self-start rounded-full bg-brand-dark px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-brand-earth transition-colors"
                   >
                     Saiba mais
                     <ArrowRight className="h-3.5 w-3.5" />
