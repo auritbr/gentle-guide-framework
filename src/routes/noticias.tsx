@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import { IMAGES, NOTICIAS } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
+import { NewsCard } from "@/components/site/NewsCard";
+import { Pagination } from "@/components/site/Pagination";
 
 export const Route = createFileRoute("/noticias")({
   head: () => ({
@@ -14,47 +16,83 @@ export const Route = createFileRoute("/noticias")({
   component: Noticias,
 });
 
-const CATEGORIAS = ["Todas", "Cultura", "Comunidade", "Memória", "Projetos", "Eventos"];
-
-const TODAS = [
-  ...NOTICIAS,
-  { categoria: "Eventos", titulo: "Calendário cultural anuncia datas das celebrações", resumo: "Confira a programação completa de festejos, encontros e atividades abertas ao público.", imagem: IMAGES.dance, data: "02 fev 2025" },
-  { categoria: "Comunidade", titulo: "Mutirão reúne voluntários em ação de cidadania", resumo: "Atividade fortaleceu vínculos com a vizinhança e apoiou famílias da região.", imagem: IMAGES.community, data: "20 jan 2025" },
-  { categoria: "Memória", titulo: "Roda de conversa marca dia da memória ancestral", resumo: "Encontro reuniu gerações para partilha de histórias e saberes tradicionais.", imagem: IMAGES.elder, data: "10 jan 2025" },
-];
+const CATEGORIAS = ["Todas", "Cultura", "Comunidade", "Projetos", "Eventos", "Memória", "Transparência"];
+const PER_PAGE = 6;
 
 function Noticias() {
   const [cat, setCat] = useState("Todas");
-  const lista = cat === "Todas" ? TODAS : TODAS.filter((n) => n.categoria === cat);
+  const [input, setInput] = useState("");
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(1);
+
+  const filtradas = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return NOTICIAS.filter((n) => {
+      const catOk = cat === "Todas" || n.categoria === cat;
+      const qOk = !q || n.titulo.toLowerCase().includes(q) || n.resumo.toLowerCase().includes(q);
+      return catOk && qOk;
+    });
+  }, [cat, query]);
+
+  const totalPages = Math.max(1, Math.ceil(filtradas.length / PER_PAGE));
+  const current = Math.min(page, totalPages);
+  const visible = filtradas.slice((current - 1) * PER_PAGE, current * PER_PAGE);
+
+  const onSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    setQuery(input);
+    setPage(1);
+  };
+
   return (
     <>
-      <PageHero image={IMAGES.heroNews} eyebrow="Comunicação" title="" highlight="Notícias" subtitle="Acompanhe registros, projetos, eventos e novidades da Família Hùndésô."/>
+      <PageHero
+        image={IMAGES.heroNews}
+        eyebrow="Comunicação"
+        title="Notícias"
+        subtitle="Acompanhe registros, ações, eventos e comunicados da Família Hùndésô."
+      />
 
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-2 mb-12">
+          <form onSubmit={onSearch} className="flex flex-col sm:flex-row gap-3 max-w-3xl">
+            <div className="relative flex-1">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/40" />
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Buscar notícias..."
+                className="w-full rounded-full border border-brand-earth/20 bg-brand-cream/40 pl-11 pr-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-earth"
+              />
+            </div>
+            <button type="submit" className="rounded-full bg-gradient-warm px-8 py-3 text-sm font-bold text-white hover:scale-[1.02] transition-transform">
+              Buscar
+            </button>
+          </form>
+
+          <div className="mt-8 flex flex-wrap gap-2">
             {CATEGORIAS.map((c) => (
-              <button key={c} onClick={() => setCat(c)} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${cat===c?"bg-brand-dark text-white":"bg-brand-cream text-brand-dark hover:bg-brand-gold"}`}>{c}</button>
+              <button
+                key={c}
+                onClick={() => { setCat(c); setPage(1); }}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${cat === c ? "bg-brand-dark text-white" : "bg-brand-cream text-brand-dark hover:bg-brand-gold"}`}
+              >
+                {c}
+              </button>
             ))}
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {lista.map((n) => (
-              <article key={n.titulo} className="group overflow-hidden rounded-3xl bg-brand-cream hover:shadow-xl transition">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={n.imagem} alt={n.titulo} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-xs">
-                    <span className="rounded-full bg-brand-earth px-3 py-1 font-semibold text-white">{n.categoria}</span>
-                    <span className="text-foreground/60">{n.data}</span>
-                  </div>
-                  <h3 className="mt-3 font-display text-xl font-bold text-brand-dark">{n.titulo}</h3>
-                  <p className="mt-2 text-sm text-foreground/70">{n.resumo}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-earth hover:text-brand-red">Ler mais <ArrowRight className="h-3.5 w-3.5"/></button>
-                </div>
-              </article>
-            ))}
-          </div>
+
+          {visible.length === 0 ? (
+            <p className="mt-16 text-center text-foreground/60">Nenhuma notícia encontrada.</p>
+          ) : (
+            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {visible.map((n) => (
+                <NewsCard key={n.id} n={n} />
+              ))}
+            </div>
+          )}
+
+          <Pagination page={current} totalPages={totalPages} onChange={setPage} />
         </div>
       </section>
     </>
