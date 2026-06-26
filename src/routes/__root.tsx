@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { FloatingButtons } from "@/components/site/floating/FloatingButtons";
 
 function NotFoundComponent() {
   return (
@@ -112,6 +112,25 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        {/*
+          VLibras — widget oficial do Governo Federal.
+          Precisa estar no HTML inicial (shell) para o script
+          https://vlibras.gov.br/app/vlibras-plugin.js encontrar o
+          markup `<div vw>` e renderizar o tradutor de Libras.
+        */}
+        <div vw="true" className="enabled">
+          <div vw-access-button="true" className="active"></div>
+          <div vw-plugin-wrapper="true">
+            <div className="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.addEventListener('load',function(){if(window.VLibras){new window.VLibras.Widget('https://vlibras.gov.br/app');}});",
+          }}
+        />
         <Scripts />
       </body>
     </html>
@@ -128,7 +147,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-      <WhatsAppFloat />
+      <FloatingButtons />
     </QueryClientProvider>
   );
 }
