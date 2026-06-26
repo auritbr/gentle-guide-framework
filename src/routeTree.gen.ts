@@ -13,6 +13,7 @@ import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ComoAjudarRouteImport } from './routes/como-ajudar'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -36,6 +37,11 @@ const NoticiasRoute = NoticiasRouteImport.update({
   path: '/noticias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComoAjudarRoute = ComoAjudarRouteImport.update({
   id: '/como-ajudar',
   path: '/como-ajudar',
@@ -50,6 +56,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/como-ajudar': typeof ComoAjudarRoute
+  '/contato': typeof ContatoRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/quem-somos': typeof QuemSomosRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/como-ajudar': typeof ComoAjudarRoute
+  '/contato': typeof ContatoRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/quem-somos': typeof QuemSomosRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/como-ajudar': typeof ComoAjudarRoute
+  '/contato': typeof ContatoRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/quem-somos': typeof QuemSomosRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/como-ajudar'
+    | '/contato'
     | '/noticias'
     | '/o-que-fazemos'
     | '/quem-somos'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/como-ajudar'
+    | '/contato'
     | '/noticias'
     | '/o-que-fazemos'
     | '/quem-somos'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/como-ajudar'
+    | '/contato'
     | '/noticias'
     | '/o-que-fazemos'
     | '/quem-somos'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComoAjudarRoute: typeof ComoAjudarRoute
+  ContatoRoute: typeof ContatoRoute
   NoticiasRoute: typeof NoticiasRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
   QuemSomosRoute: typeof QuemSomosRoute
@@ -138,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NoticiasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/como-ajudar': {
       id: '/como-ajudar'
       path: '/como-ajudar'
@@ -158,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComoAjudarRoute: ComoAjudarRoute,
+  ContatoRoute: ContatoRoute,
   NoticiasRoute: NoticiasRoute,
   OQueFazemosRoute: OQueFazemosRoute,
   QuemSomosRoute: QuemSomosRoute,
@@ -166,3 +187,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
