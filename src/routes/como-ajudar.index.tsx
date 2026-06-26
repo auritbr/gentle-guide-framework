@@ -3,7 +3,7 @@ import { Heart, Handshake, Package, CalendarHeart, Share2, Users } from "lucide-
 import { IMAGES } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
 
-export const Route = createFileRoute("/como-ajudar")({
+export const Route = createFileRoute("/como-ajudar/")({
   head: () => ({
     meta: [
       { title: "Como Ajudar — Família Hùndésô" },
