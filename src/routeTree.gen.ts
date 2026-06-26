@@ -22,6 +22,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ComoAjudarIndexRouteImport } from './routes/como-ajudar.index'
+import { Route as ProjetosPresidenteRouteImport } from './routes/projetos.presidente'
+import { Route as ProjetosMaracatuRouteImport } from './routes/projetos.maracatu'
+import { Route as ProjetosLgbtqiaRouteImport } from './routes/projetos.lgbtqia'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as ComoAjudarPontoDeColetaRouteImport } from './routes/como-ajudar.ponto-de-coleta'
@@ -94,6 +97,21 @@ const ComoAjudarIndexRoute = ComoAjudarIndexRouteImport.update({
   path: '/como-ajudar/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetosPresidenteRoute = ProjetosPresidenteRouteImport.update({
+  id: '/presidente',
+  path: '/presidente',
+  getParentRoute: () => ProjetosRoute,
+} as any)
+const ProjetosMaracatuRoute = ProjetosMaracatuRouteImport.update({
+  id: '/maracatu',
+  path: '/maracatu',
+  getParentRoute: () => ProjetosRoute,
+} as any)
+const ProjetosLgbtqiaRoute = ProjetosLgbtqiaRouteImport.update({
+  id: '/lgbtqia',
+  path: '/lgbtqia',
+  getParentRoute: () => ProjetosRoute,
+} as any)
 const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -144,6 +162,9 @@ export interface FileRoutesByFullPath {
   '/como-ajudar/ponto-de-coleta': typeof ComoAjudarPontoDeColetaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/maracatu': typeof ProjetosMaracatuRoute
+  '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -163,6 +184,9 @@ export interface FileRoutesByTo {
   '/como-ajudar/ponto-de-coleta': typeof ComoAjudarPontoDeColetaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/maracatu': typeof ProjetosMaracatuRoute
+  '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar': typeof ComoAjudarIndexRoute
   '/noticias': typeof NoticiasIndexRoute
   '/projetos': typeof ProjetosIndexRoute
@@ -185,6 +209,9 @@ export interface FileRoutesById {
   '/como-ajudar/ponto-de-coleta': typeof ComoAjudarPontoDeColetaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/maracatu': typeof ProjetosMaracatuRoute
+  '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -208,6 +235,9 @@ export interface FileRouteTypes {
     | '/como-ajudar/ponto-de-coleta'
     | '/noticias/$slug'
     | '/projetos/$slug'
+    | '/projetos/lgbtqia'
+    | '/projetos/maracatu'
+    | '/projetos/presidente'
     | '/como-ajudar/'
     | '/noticias/'
     | '/projetos/'
@@ -227,6 +257,9 @@ export interface FileRouteTypes {
     | '/como-ajudar/ponto-de-coleta'
     | '/noticias/$slug'
     | '/projetos/$slug'
+    | '/projetos/lgbtqia'
+    | '/projetos/maracatu'
+    | '/projetos/presidente'
     | '/como-ajudar'
     | '/noticias'
     | '/projetos'
@@ -248,6 +281,9 @@ export interface FileRouteTypes {
     | '/como-ajudar/ponto-de-coleta'
     | '/noticias/$slug'
     | '/projetos/$slug'
+    | '/projetos/lgbtqia'
+    | '/projetos/maracatu'
+    | '/projetos/presidente'
     | '/como-ajudar/'
     | '/noticias/'
     | '/projetos/'
@@ -364,6 +400,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoAjudarIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projetos/presidente': {
+      id: '/projetos/presidente'
+      path: '/presidente'
+      fullPath: '/projetos/presidente'
+      preLoaderRoute: typeof ProjetosPresidenteRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
+    '/projetos/maracatu': {
+      id: '/projetos/maracatu'
+      path: '/maracatu'
+      fullPath: '/projetos/maracatu'
+      preLoaderRoute: typeof ProjetosMaracatuRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
+    '/projetos/lgbtqia': {
+      id: '/projetos/lgbtqia'
+      path: '/lgbtqia'
+      fullPath: '/projetos/lgbtqia'
+      preLoaderRoute: typeof ProjetosLgbtqiaRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
     '/projetos/$slug': {
       id: '/projetos/$slug'
       path: '/$slug'
@@ -425,11 +482,17 @@ const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(
 
 interface ProjetosRouteChildren {
   ProjetosSlugRoute: typeof ProjetosSlugRoute
+  ProjetosLgbtqiaRoute: typeof ProjetosLgbtqiaRoute
+  ProjetosMaracatuRoute: typeof ProjetosMaracatuRoute
+  ProjetosPresidenteRoute: typeof ProjetosPresidenteRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
 }
 
 const ProjetosRouteChildren: ProjetosRouteChildren = {
   ProjetosSlugRoute: ProjetosSlugRoute,
+  ProjetosLgbtqiaRoute: ProjetosLgbtqiaRoute,
+  ProjetosMaracatuRoute: ProjetosMaracatuRoute,
+  ProjetosPresidenteRoute: ProjetosPresidenteRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
 }
 
