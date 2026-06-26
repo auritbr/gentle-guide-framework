@@ -147,7 +147,7 @@ function ProjetosPage() {
               <InstitutionalCard
                 key={bloco.titulo}
                 titulo={bloco.titulo}
-                texto={bloco.paragrafos.join("\n\n")}
+                texto={bloco.paragrafos}
               />
             ))}
           </div>
