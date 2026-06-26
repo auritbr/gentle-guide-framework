@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { PROJETOS_LISTA, type ProjetoDetalhe } from "@/data/site";
+import { InstitutionalCard } from "@/components/site/InstitutionalCard";
 
 export const Route = createFileRoute("/projetos/$slug")({
   head: ({ params }) => {
@@ -92,12 +93,7 @@ function ProjetoInternoPage() {
                 )}
                 <div className={`grid gap-5 ${grupo.cards.length >= 4 ? "sm:grid-cols-2 lg:grid-cols-4" : grupo.cards.length === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2"}`}>
                   {grupo.cards.map((c) => (
-                    <div key={c.titulo} className="rounded-2xl bg-white p-6 border-l-4 border-brand-gold hover:shadow-md transition-shadow">
-                      <h3 className="font-display text-lg font-bold text-brand-dark">{c.titulo}</h3>
-                      {c.texto && (
-                        <p className="mt-2 text-sm leading-relaxed text-foreground/70">{c.texto}</p>
-                      )}
-                    </div>
+                    <InstitutionalCard key={c.titulo} titulo={c.titulo} texto={c.texto} />
                   ))}
                 </div>
               </div>
