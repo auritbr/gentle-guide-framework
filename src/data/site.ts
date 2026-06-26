@@ -37,6 +37,7 @@ export const NAV = [
       { label: "Doação financeira", to: "/como-ajudar/doacao-financeira" },
       { label: "Doação de mantimentos", to: "/como-ajudar/doacao-mantimentos" },
       { label: "Doação de itens", to: "/como-ajudar/doacao-itens" },
+      { label: "Ponto de coleta", to: "/como-ajudar/ponto-de-coleta" },
     ],
   },
   { label: "Notícias", to: "/noticias" },
