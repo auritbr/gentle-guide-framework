@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as NossoCultoRouteImport } from './routes/nosso-culto'
@@ -46,6 +47,11 @@ const QuemSomosRoute = QuemSomosRouteImport.update({
 const ProjetosRoute = ProjetosRouteImport.update({
   id: '/projetos',
   path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
@@ -160,6 +166,7 @@ export interface FileRoutesByFullPath {
   '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos': typeof ProjetosRouteWithChildren
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
@@ -184,6 +191,7 @@ export interface FileRoutesByTo {
   '/galeria': typeof GaleriaRoute
   '/nosso-culto': typeof NossoCultoRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
@@ -209,6 +217,7 @@ export interface FileRoutesById {
   '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos': typeof ProjetosRouteWithChildren
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
@@ -236,6 +245,7 @@ export interface FileRouteTypes {
     | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/politica-de-privacidade'
     | '/projetos'
     | '/quem-somos'
     | '/transparencia'
@@ -260,6 +270,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/nosso-culto'
     | '/o-que-fazemos'
+    | '/politica-de-privacidade'
     | '/quem-somos'
     | '/transparencia'
     | '/como-ajudar/doacao-financeira'
@@ -284,6 +295,7 @@ export interface FileRouteTypes {
     | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/politica-de-privacidade'
     | '/projetos'
     | '/quem-somos'
     | '/transparencia'
@@ -310,6 +322,7 @@ export interface RootRouteChildren {
   NossoCultoRoute: typeof NossoCultoRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
   OQueFazemosRoute: typeof OQueFazemosRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   ProjetosRoute: typeof ProjetosRouteWithChildren
   QuemSomosRoute: typeof QuemSomosRoute
   TransparenciaRoute: typeof TransparenciaRoute
@@ -341,6 +354,13 @@ declare module '@tanstack/react-router' {
       path: '/projetos'
       fullPath: '/projetos'
       preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-que-fazemos': {
@@ -529,6 +549,7 @@ const rootRouteChildren: RootRouteChildren = {
   NossoCultoRoute: NossoCultoRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
   OQueFazemosRoute: OQueFazemosRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   ProjetosRoute: ProjetosRouteWithChildren,
   QuemSomosRoute: QuemSomosRoute,
   TransparenciaRoute: TransparenciaRoute,
