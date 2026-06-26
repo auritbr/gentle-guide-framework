@@ -274,6 +274,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.workshop, IMAGES.children, IMAGES.group, IMAGES.hands, IMAGES.community, IMAGES.elder],
   },
   {
     slug: "bazar-da-gente",
