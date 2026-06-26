@@ -18,7 +18,7 @@ function OQueFazemos() {
     <>
       <PageHero image={IMAGES.heroWork} eyebrow="Atuação" title="O que" highlight="fazemos" subtitle="Atuamos na preservação da ancestralidade, na promoção da cultura, no cuidado comunitário e no fortalecimento de ações sociais e educativas."/>
 
-      <section className="py-24 bg-brand-cream">
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
           {AREAS.map((a, idx) => (
             <div key={a.id} id={a.id} className={`grid gap-10 lg:grid-cols-2 items-center ${idx%2 ? "lg:[&>*:first-child]:order-2" : ""}`}>

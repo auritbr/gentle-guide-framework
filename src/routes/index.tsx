@@ -23,7 +23,7 @@ function Index() {
       <HeroCarousel />
 
       {/* Apresentação */}
-      <section className="py-24 sm:py-32 bg-brand-cream">
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <div className="text-[11px] uppercase tracking-[0.25em] text-brand-earth font-semibold">Quem Somos</div>
@@ -42,7 +42,7 @@ function Index() {
       </section>
 
       {/* Missão Visão Valores */}
-      <section className="py-24 sm:py-32 bg-brand-dark text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-brand-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{backgroundImage:`url(${IMAGES.culture})`,backgroundSize:'cover',backgroundPosition:'center'}}/>
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/95 to-brand-dark"/>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ function Index() {
       </section>
 
       {/* Impacto */}
-      <section className="relative isolate py-32 overflow-hidden">
+      <section className="relative isolate py-20 overflow-hidden">
         <img src={IMAGES.community} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover"/>
         <div className="absolute inset-0 -z-10 bg-brand-dark/80"/>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -95,7 +95,7 @@ function Index() {
       </section>
 
       {/* O que fazemos */}
-      <section className="py-24 sm:py-32 bg-brand-cream">
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Atuação</div>
@@ -122,7 +122,7 @@ function Index() {
       </section>
 
       {/* Projetos */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -154,7 +154,7 @@ function Index() {
       </section>
 
       {/* Por que apoiar */}
-      <section className="py-24 sm:py-32 bg-gradient-warm text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gradient-warm text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{backgroundImage:`url(${IMAGES.hands})`,backgroundSize:'cover',backgroundPosition:'center'}}/>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
           <div>
@@ -183,7 +183,7 @@ function Index() {
       </section>
 
       {/* Transparência */}
-      <section className="py-24 sm:py-32 bg-brand-cream">
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Compromisso</div>
@@ -214,7 +214,7 @@ function Index() {
       </section>
 
       {/* Notícias */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>

@@ -18,7 +18,7 @@ function ComoAjudar() {
     <>
       <PageHero image={IMAGES.heroHelp} eyebrow="Como ajudar" title="Apoie essa" highlight="missão" subtitle="Sua contribuição fortalece a cultura, a ancestralidade, os projetos sociais e as ações comunitárias da Família Hùndésô."/>
 
-      <section id="doacoes" className="py-24 bg-brand-cream">
+      <section id="doacoes" className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark text-balance leading-[1.05]">
             A cultura e a ancestralidade precisam de <span className="highlight-stripe">cuidado, presença e continuidade</span>.
@@ -29,7 +29,7 @@ function ComoAjudar() {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark text-center">Como sua ajuda contribui?</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -50,7 +50,7 @@ function ComoAjudar() {
         </div>
       </section>
 
-      <section id="parcerias" className="py-24 bg-brand-cream">
+      <section id="parcerias" className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark text-center">Outras formas de ajudar</h2>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
