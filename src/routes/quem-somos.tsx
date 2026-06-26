@@ -208,7 +208,7 @@ function QuemSomos() {
       </section>
 
       {/* 3. TRAJETÓRIA E RECONHECIMENTO */}
-      <section id="trajetoria" className="bg-white py-20 sm:py-24">
+      <section id="trajetoria" className="scroll-mt-24 bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div className="relative">
@@ -418,7 +418,7 @@ function QuemSomos() {
       </section>
 
       {/* 8. MISSÃO */}
-      <section className="relative isolate overflow-hidden bg-brand-dark py-24 text-white">
+      <section className="relative isolate overflow-hidden bg-brand-dark py-16 text-white sm:py-20 lg:py-24">
         <img
           src={IMAGES.ceremony}
           alt=""
@@ -426,27 +426,27 @@ function QuemSomos() {
           className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-dark via-[#3a1d10] to-brand-dark/90" />
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
             Missão
           </div>
-          <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-[48px]">
+          <h2 className="mt-5 text-[30px] font-bold leading-tight sm:text-[36px] lg:text-[44px]">
             Missão
           </h2>
-          <p className="mx-auto mt-8 max-w-3xl text-[18px] leading-[1.75] text-white/90 sm:text-[20px]">
+          <p className="mx-auto mt-6 max-w-[820px] text-[17px] leading-[1.7] text-white/90 sm:text-[18px]">
             A missão da Família Hùndésô é preservar memórias, fortalecer
             comunidades, promover direitos, valorizar as tradições
             afro-religiosas e contribuir para a construção de uma sociedade
             mais justa, plural, solidária e sustentável.
           </p>
-          <p className="mt-8 text-base font-medium uppercase tracking-[0.2em] text-brand-gold">
+          <p className="mt-6 text-xs font-medium uppercase tracking-[0.2em] text-brand-gold sm:text-sm">
             Essa missão se expressa em diferentes frentes de atuação:
           </p>
         </div>
       </section>
 
       {/* 9. FRENTES DE ATUAÇÃO */}
-      <section className="bg-brand-cream py-20 sm:py-24">
+      <section className="bg-brand-cream py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <SectionEyebrow>Como atuamos</SectionEyebrow>
@@ -455,7 +455,7 @@ function QuemSomos() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {FRENTES.map((f) => {
               const Icon = f.icon;
               return (
@@ -463,21 +463,21 @@ function QuemSomos() {
                   key={f.titulo}
                   className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-lg"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <div className="relative h-44 overflow-hidden sm:h-52 lg:h-56">
                     <img
                       src={f.imagem}
                       alt={f.titulo}
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-xl bg-white/90 text-brand-earth shadow-md backdrop-blur">
-                      <Icon className="h-5 w-5" aria-hidden />
+                    <div className="absolute left-3.5 top-3.5 grid h-10 w-10 place-items-center rounded-xl bg-white/90 text-brand-earth shadow-md backdrop-blur">
+                      <Icon className="h-4.5 w-4.5" aria-hidden />
                     </div>
                   </div>
-                  <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
-                    <h3 className="text-xl font-bold leading-tight text-brand-dark sm:text-2xl">
+                  <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
+                    <h3 className="text-lg font-bold leading-snug text-brand-dark sm:text-xl">
                       {f.titulo}
                     </h3>
-                    <div className="space-y-4 text-[16px] leading-[1.7] text-foreground/80">
+                    <div className="space-y-3 text-[15px] leading-[1.65] text-foreground/80">
                       {f.texto.split("\n\n").map((p, idx) => (
                         <p key={idx}>{p}</p>
                       ))}
@@ -491,18 +491,18 @@ function QuemSomos() {
       </section>
 
       {/* 9.5 NOSSO CULTO — CARD */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <article className="group relative grid overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 lg:grid-cols-[1.1fr_1fr]">
-            <div className="relative isolate flex flex-col justify-between gap-8 bg-[linear-gradient(135deg,#3A1D10_0%,#6B3F24_55%,#9A4A2F_100%)] p-8 text-white sm:p-12">
+          <article className="group relative grid overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 lg:grid-cols-[1.1fr_1fr] lg:max-h-[420px]">
+            <div className="relative isolate flex flex-col justify-between gap-6 bg-[linear-gradient(135deg,#3A1D10_0%,#6B3F24_55%,#9A4A2F_100%)] p-7 text-white sm:p-9">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
                   <Flame className="h-3.5 w-3.5" aria-hidden /> Tradição e ancestralidade
                 </div>
-                <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px]">
+                <h2 className="mt-4 text-[26px] font-bold leading-tight sm:text-[30px] lg:text-[34px]">
                   Nosso culto
                 </h2>
-                <p className="mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
+                <p className="mt-4 max-w-xl text-[15px] leading-[1.65] text-white/85 sm:text-[16px]">
                   Conheça as tradições, fundamentos e expressões espirituais
                   que orientam o Hùnkpámè Hùndésô como espaço de fé,
                   ancestralidade, resistência e preservação das matrizes
@@ -512,14 +512,14 @@ function QuemSomos() {
               <div>
                 <Link
                   to="/nosso-culto"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-brand-dark shadow-md transition hover:brightness-105"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-brand-dark shadow-md transition hover:brightness-105 sm:text-sm"
                 >
                   Saiba mais
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
                 </Link>
               </div>
             </div>
-            <div className="relative min-h-[260px] overflow-hidden lg:min-h-full">
+            <div className="relative h-56 overflow-hidden sm:h-72 lg:h-full lg:min-h-[360px]">
               <img
                 src={IMAGES.ceremony}
                 alt="Espaço sagrado da Família Hùndésô — tradição e ancestralidade"
@@ -532,27 +532,27 @@ function QuemSomos() {
       </section>
 
       {/* 10. CTA FINAL */}
-      <section className="relative isolate overflow-hidden py-20 sm:py-24">
+      <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#9A4A2F_0%,#6B3F24_55%,#C9953B_100%)]" />
-        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[44px]">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-[28px] font-bold leading-tight text-white sm:text-[36px] lg:text-[44px]">
             Fortalecer a Família Hùndésô é fortalecer memória, cultura e
             comunidade.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.75] text-white/90 sm:text-[18px]">
+          <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-[1.7] text-white/90 sm:text-[17px]">
             Conheça nossos projetos, acompanhe nossas ações e apoie a
             continuidade desse trabalho.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               to="/projetos"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-bold uppercase tracking-[0.08em] text-brand-earth shadow-lg transition hover:brightness-105"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-brand-earth shadow-lg transition hover:brightness-105 sm:text-sm"
             >
               Conhecer projetos
             </Link>
             <Link
               to="/como-ajudar"
-              className="inline-flex items-center justify-center rounded-full bg-brand-dark px-7 py-3.5 text-sm font-bold uppercase tracking-[0.08em] text-white shadow-lg ring-1 ring-white/20 transition hover:bg-black"
+              className="inline-flex items-center justify-center rounded-full bg-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-lg ring-1 ring-white/20 transition hover:bg-black sm:text-sm"
             >
               Apoiar agora
             </Link>
