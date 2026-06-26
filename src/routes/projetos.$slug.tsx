@@ -106,6 +106,33 @@ function ProjetoInternoPage() {
         </section>
       )}
 
+      {/* Galeria de fotos */}
+      {projeto.galeria && projeto.galeria.length > 0 && (
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl">
+              <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Imagens</div>
+              <h2 className="mt-3 font-display text-2xl sm:text-3xl font-bold text-brand-dark">Galeria de fotos</h2>
+              <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed">
+                Registros das ações, territórios, encontros e atividades relacionadas a esta iniciativa.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {projeto.galeria.map((src, i) => (
+                <div key={i} className="overflow-hidden rounded-2xl aspect-[4/3] bg-brand-cream">
+                  <img
+                    src={src}
+                    alt={`${projeto.titulo} — imagem ${i + 1}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="py-14 lg:py-16 bg-gradient-earth">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">

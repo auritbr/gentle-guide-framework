@@ -120,6 +120,7 @@ export type ProjetoDetalhe = {
   imagem: string;
   secoes: ProjetoSecao[];
   cardGrupos?: ProjetoCardGrupo[];
+  galeria?: string[];
 };
 
 export const PROJETOS_LISTA: ProjetoDetalhe[] = [
@@ -148,19 +149,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
-    cardGrupos: [
-      {
-        titulo: "Destaques",
-        cards: [
-          { titulo: "Memória" },
-          { titulo: "Ancestralidade" },
-          { titulo: "Cultura afro-indígena" },
-          { titulo: "Cidadania ativa" },
-          { titulo: "Ponto de Cultura Rural" },
-          { titulo: "Política Nacional de Cultura Viva" },
-        ],
-      },
-    ],
+    galeria: [IMAGES.workshop, IMAGES.culture, IMAGES.dance, IMAGES.drums, IMAGES.ceremony, IMAGES.group],
   },
   {
     slug: "sopao-solidario",
@@ -182,18 +171,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
-    cardGrupos: [
-      {
-        titulo: "Destaques",
-        cards: [
-          { titulo: "Alimentação" },
-          { titulo: "Partilha" },
-          { titulo: "Acolhimento" },
-          { titulo: "Fortalecimento comunitário" },
-          { titulo: "Dignidade humana" },
-        ],
-      },
-    ],
+    galeria: [IMAGES.community, IMAGES.hands, IMAGES.group, IMAGES.children, IMAGES.workshop, IMAGES.elder],
   },
   {
     slug: "juridico",
@@ -233,6 +211,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.hands, IMAGES.group, IMAGES.community, IMAGES.elder, IMAGES.workshop, IMAGES.children],
   },
   {
     slug: "natal-da-gente",
@@ -254,19 +233,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
-    cardGrupos: [
-      {
-        titulo: "Destaques",
-        cards: [
-          { titulo: "Doações" },
-          { titulo: "Escuta" },
-          { titulo: "Afeto" },
-          { titulo: "Esperança" },
-          { titulo: "Apoio social" },
-          { titulo: "Coletividade" },
-        ],
-      },
-    ],
+    galeria: [IMAGES.group, IMAGES.community, IMAGES.children, IMAGES.hands, IMAGES.elder, IMAGES.dance],
   },
   {
     slug: "alfabetizacao",
@@ -307,6 +274,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.workshop, IMAGES.children, IMAGES.group, IMAGES.hands, IMAGES.community, IMAGES.elder],
   },
   {
     slug: "bazar-da-gente",
@@ -373,6 +341,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.hands, IMAGES.community, IMAGES.group, IMAGES.children, IMAGES.workshop, IMAGES.elder],
   },
   {
     slug: "comunidade-riacho-branco",
@@ -444,6 +413,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.elder, IMAGES.community, IMAGES.culture, IMAGES.ceremony, IMAGES.group, IMAGES.dance],
   },
   {
     slug: "rota-dos-voduns",
@@ -497,6 +467,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.ceremony, IMAGES.culture, IMAGES.drums, IMAGES.dance, IMAGES.elder, IMAGES.group],
   },
 ];
 
