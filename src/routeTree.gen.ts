@@ -14,6 +14,7 @@ import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as NossoCultoRouteImport } from './routes/nosso-culto'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -44,6 +45,11 @@ const OQueFazemosRoute = OQueFazemosRouteImport.update({
 const NoticiasRoute = NoticiasRouteImport.update({
   id: '/noticias',
   path: '/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NossoCultoRoute = NossoCultoRouteImport.update({
+  id: '/nosso-culto',
+  path: '/nosso-culto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GaleriaRoute = GaleriaRouteImport.update({
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
+  '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/projetos': typeof ProjetosRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
+  '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/projetos': typeof ProjetosRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
+  '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/projetos': typeof ProjetosRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/equipe'
     | '/galeria'
+    | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
     | '/projetos'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/equipe'
     | '/galeria'
+    | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
     | '/projetos'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/equipe'
     | '/galeria'
+    | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
     | '/projetos'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   EquipeRoute: typeof EquipeRoute
   GaleriaRoute: typeof GaleriaRoute
+  NossoCultoRoute: typeof NossoCultoRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
   OQueFazemosRoute: typeof OQueFazemosRoute
   ProjetosRoute: typeof ProjetosRoute
@@ -207,6 +220,13 @@ declare module '@tanstack/react-router' {
       path: '/noticias'
       fullPath: '/noticias'
       preLoaderRoute: typeof NoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nosso-culto': {
+      id: '/nosso-culto'
+      path: '/nosso-culto'
+      fullPath: '/nosso-culto'
+      preLoaderRoute: typeof NossoCultoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galeria': {
@@ -272,6 +292,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   EquipeRoute: EquipeRoute,
   GaleriaRoute: GaleriaRoute,
+  NossoCultoRoute: NossoCultoRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
   OQueFazemosRoute: OQueFazemosRoute,
   ProjetosRoute: ProjetosRoute,

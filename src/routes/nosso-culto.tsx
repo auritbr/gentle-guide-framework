@@ -4,7 +4,6 @@ import {
   Leaf,
   Drum,
   Sparkles,
-  HeartHandshake,
   BookOpen,
   TreePine,
   Shield,
@@ -283,6 +282,3 @@ function NossoCulto() {
     </>
   );
 }
-
-// keep unused icon import safe
-void HeartHandshake;
