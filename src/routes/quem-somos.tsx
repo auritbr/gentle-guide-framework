@@ -490,6 +490,47 @@ function QuemSomos() {
         </div>
       </section>
 
+      {/* 9.5 NOSSO CULTO — CARD */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <article className="group relative grid overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 lg:grid-cols-[1.1fr_1fr]">
+            <div className="relative isolate flex flex-col justify-between gap-8 bg-[linear-gradient(135deg,#3A1D10_0%,#6B3F24_55%,#9A4A2F_100%)] p-8 text-white sm:p-12">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
+                  <Flame className="h-3.5 w-3.5" aria-hidden /> Tradição e ancestralidade
+                </div>
+                <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px]">
+                  Nosso culto
+                </h2>
+                <p className="mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
+                  Conheça as tradições, fundamentos e expressões espirituais
+                  que orientam o Hùnkpámè Hùndésô como espaço de fé,
+                  ancestralidade, resistência e preservação das matrizes
+                  africanas e indígenas.
+                </p>
+              </div>
+              <div>
+                <Link
+                  to="/nosso-culto"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-brand-dark shadow-md transition hover:brightness-105"
+                >
+                  Saiba mais
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
+                </Link>
+              </div>
+            </div>
+            <div className="relative min-h-[260px] overflow-hidden lg:min-h-full">
+              <img
+                src={IMAGES.ceremony}
+                alt="Espaço sagrado da Família Hùndésô — tradição e ancestralidade"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-brand-dark/10 to-brand-dark/40 lg:bg-gradient-to-r lg:from-brand-dark/40 lg:via-transparent lg:to-transparent" />
+            </div>
+          </article>
+        </div>
+      </section>
+
       {/* 10. CTA FINAL */}
       <section className="relative isolate overflow-hidden py-20 sm:py-24">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#9A4A2F_0%,#6B3F24_55%,#C9953B_100%)]" />
