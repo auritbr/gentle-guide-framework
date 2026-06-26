@@ -18,6 +18,7 @@ import { Route as NossoCultoRouteImport } from './routes/nosso-culto'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
@@ -75,6 +76,11 @@ const EquipeRoute = EquipeRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
+  id: '/calendario-liturgico',
+  path: '/calendario-liturgico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -147,6 +153,7 @@ const ComoAjudarDoacaoFinanceiraRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
@@ -194,6 +202,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
@@ -220,6 +229,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/calendario-liturgico'
     | '/contato'
     | '/equipe'
     | '/galeria'
@@ -244,6 +254,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/calendario-liturgico'
     | '/contato'
     | '/equipe'
     | '/galeria'
@@ -266,6 +277,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/calendario-liturgico'
     | '/contato'
     | '/equipe'
     | '/galeria'
@@ -291,6 +303,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   ContatoRoute: typeof ContatoRoute
   EquipeRoute: typeof EquipeRoute
   GaleriaRoute: typeof GaleriaRoute
@@ -370,6 +383,13 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendario-liturgico': {
+      id: '/calendario-liturgico'
+      path: '/calendario-liturgico'
+      fullPath: '/calendario-liturgico'
+      preLoaderRoute: typeof CalendarioLiturgicoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -502,6 +522,7 @@ const ProjetosRouteWithChildren = ProjetosRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   ContatoRoute: ContatoRoute,
   EquipeRoute: EquipeRoute,
   GaleriaRoute: GaleriaRoute,
