@@ -19,7 +19,7 @@ export function FloatingButtons() {
 
   return (
     <>
-      <div className="fixed left-4 sm:left-6 bottom-[72px] sm:bottom-[78px] z-[999] flex flex-col gap-2.5 sm:gap-3 bg-transparent">
+      <div className="fixed left-4 sm:left-6 bottom-5 sm:bottom-[26px] z-[999] flex flex-col gap-2 sm:gap-2.5 bg-transparent">
         <CookieButton />
         <AccessibilityButton />
       </div>
