@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { IMAGES, PILARES, POLITICAS, PROJETOS_LISTA } from "@/data/site";
 import { ArrowRight } from "lucide-react";
+import { InstitutionalCard } from "@/components/site/InstitutionalCard";
 
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
@@ -143,12 +144,11 @@ function ProjetosPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {POLITICAS.map((bloco) => (
-              <div key={bloco.titulo} className="rounded-2xl bg-white p-7 border-l-4 border-brand-gold">
-                <h3 className="font-display text-xl font-bold text-brand-dark">{bloco.titulo}</h3>
-                <div className="mt-3 space-y-3 text-sm sm:text-base leading-relaxed text-foreground/75">
-                  {bloco.paragrafos.map((p, i) => <p key={i}>{p}</p>)}
-                </div>
-              </div>
+              <InstitutionalCard
+                key={bloco.titulo}
+                titulo={bloco.titulo}
+                texto={bloco.paragrafos.join("\n\n")}
+              />
             ))}
           </div>
         </div>
