@@ -25,6 +25,7 @@ export const NAV = [
     to: "/quem-somos",
     children: [
       { label: "Quem Somos", to: "/quem-somos" },
+      { label: "Nosso Culto", to: "/nosso-culto" },
       { label: "Transparência", to: "/transparencia" },
       { label: "Equipe", to: "/equipe" },
     ],
