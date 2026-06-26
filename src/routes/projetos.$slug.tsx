@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
-import { PROJETOS_LISTA } from "@/data/site";
+import { PROJETOS_LISTA, type ProjetoDetalhe } from "@/data/site";
 
 export const Route = createFileRoute("/projetos/$slug")({
   head: ({ params }) => {
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/projetos/$slug")({
 });
 
 function ProjetoInternoPage() {
-  const { projeto } = Route.useLoaderData();
+  const { projeto } = Route.useLoaderData() as { projeto: ProjetoDetalhe };
 
   return (
     <>
