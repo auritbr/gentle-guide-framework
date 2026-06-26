@@ -22,9 +22,9 @@ export function CookieButton() {
         onClick={() => setOpen(true)}
         aria-label="Abrir preferências de cookies"
         title="Preferências de cookies"
-        className="grid h-11 w-11 sm:h-12 sm:w-12 place-items-center rounded-full bg-[#4A4A4A] text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] ring-1 ring-black/10 hover:scale-110 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
+        className="grid h-[42px] w-[42px] sm:h-[46px] sm:w-[46px] place-items-center rounded-full bg-[#4A4A4A] text-white shadow-[0_8px_20px_rgba(0,0,0,0.18)] ring-1 ring-black/10 hover:scale-110 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
       >
-        <Cookie className="h-5 w-5" />
+        <Cookie className="h-[19px] w-[19px] sm:h-[21px] sm:w-[21px]" />
       </button>
       <CookieBanner open={open} onClose={() => setOpen(false)} />
     </>
