@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Heart, Users, BookOpen, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Coins, Package, Apple } from "lucide-react";
 import { IMAGES, AREAS, PROJETOS, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
@@ -153,62 +153,62 @@ function Index() {
         </div>
       </section>
 
-      {/* Por que apoiar */}
-      <section className="py-16 sm:py-20 bg-gradient-warm text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{backgroundImage:`url(${IMAGES.hands})`,backgroundSize:'cover',backgroundPosition:'center'}}/>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
-          <div>
-            <div className="text-xs uppercase tracking-[0.25em] text-white/70 font-semibold">Por que apoiar?</div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-balance leading-[1.05]">
-              Apoiar a Família Hùndésô é fortalecer cultura, memória e comunidade.
-            </h2>
-          </div>
-          <div className="space-y-6">
-            <p className="text-lg text-white/90">Sua contribuição ajuda a manter ações culturais, projetos sociais, atividades educativas, preservação da memória ancestral e iniciativas comunitárias realizadas pela instituição.</p>
-            <ul className="space-y-3">
-              {[
-                "Fortalece a preservação das tradições afro-brasileiras.",
-                "Contribui para ações culturais e educativas.",
-                "Apoia projetos sociais e comunitários.",
-                "Ajuda na manutenção dos espaços, atividades e registros da instituição.",
-              ].map((i) => (
-                <li key={i} className="flex gap-3"><Check className="h-5 w-5 shrink-0 text-brand-gold mt-0.5"/><span>{i}</span></li>
-              ))}
-            </ul>
-            <Link to="/como-ajudar" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-brand-dark hover:bg-brand-gold transition">
-              <Heart className="h-4 w-4"/> Quero apoiar
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Transparência */}
+      {/* Como você pode ajudar */}
       <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Compromisso</div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">Transparência e compromisso</h2>
-            <p className="mt-4 text-lg text-foreground/70">A transparência fortalece a confiança entre a instituição, a comunidade, parceiros, apoiadores e órgãos públicos. Nesta área, estarão disponíveis documentos institucionais, relatórios, registros, certificações e materiais de prestação de contas.</p>
+            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Apoie</div>
+            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-brand-dark text-balance leading-[1.1]">Como você pode ajudar</h2>
+            <p className="mt-4 text-base sm:text-lg text-foreground/70 leading-relaxed">
+              Escolha a forma de contribuição que mais combina com você e fortaleça as ações sociais, culturais e comunitárias da Família Hùndésô.
+            </p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
-              {t:"Documentos Institucionais",i:BookOpen},
-              {t:"Relatórios",i:Sparkles},
-              {t:"Certificações",i:Check},
-              {t:"Prestação de Contas",i:Users},
-            ].map(({t,i:Icon}) => (
-              <div key={t} className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg transition">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand-earth/10 text-brand-earth">
-                  <Icon className="h-5 w-5"/>
+              {
+                icon: Coins,
+                img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+                titulo: "Doação financeira",
+                texto: "Contribua com um valor único, mensal ou anual para apoiar a continuidade dos projetos da instituição.",
+                btn: "Doar agora",
+                to: "/como-ajudar/doacao-financeira" as const,
+              },
+              {
+                icon: Apple,
+                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+                titulo: "Doação de mantimentos",
+                texto: "Doe alimentos, cestas básicas e itens essenciais para fortalecer ações de acolhimento e cuidado comunitário.",
+                btn: "Doar mantimentos",
+                to: "/como-ajudar/doacao-mantimentos" as const,
+              },
+              {
+                icon: Package,
+                img: "https://images.unsplash.com/photo-1489274495757-95c7c837b101?auto=format&fit=crop&w=1200&q=80",
+                titulo: "Doação de itens",
+                texto: "Roupas, calçados, brinquedos, livros e utensílios em bom estado podem ganhar uma nova vida e apoiar famílias atendidas.",
+                btn: "Doar itens",
+                to: "/como-ajudar/doacao-itens" as const,
+              },
+            ].map((c) => (
+              <article key={c.titulo} className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-brand-earth/10 hover:shadow-xl hover:-translate-y-1 transition-all">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img src={c.img} alt={c.titulo} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-2xl bg-white/95 text-brand-earth shadow">
+                    <c.icon className="h-5 w-5" />
+                  </div>
                 </div>
-                <div className="mt-4 font-display text-lg font-bold text-brand-dark">{t}</div>
-              </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-xl font-bold text-brand-dark">{c.titulo}</h3>
+                  <p className="mt-2 flex-1 text-[15px] text-foreground/75 leading-relaxed">{c.texto}</p>
+                  <Link
+                    to={c.to}
+                    className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-dark px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-earth transition"
+                  >
+                    {c.btn} <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </article>
             ))}
-          </div>
-          <div className="mt-8">
-            <Link to="/transparencia" className="inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-bold text-white hover:bg-brand-earth transition">
-              Acessar transparência <ArrowRight className="h-4 w-4"/>
-            </Link>
           </div>
         </div>
       </section>
@@ -229,6 +229,24 @@ function Index() {
             {NOTICIAS.slice(0, 3).map((n) => (
               <NewsCard key={n.id} n={n} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Transparência (compacta) */}
+      <section className="py-12 sm:py-14 bg-brand-cream">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-start gap-6 rounded-3xl bg-white p-7 sm:p-9 shadow-sm ring-1 ring-brand-earth/10 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-brand-earth font-semibold">Transparência</div>
+              <h2 className="mt-2 font-display text-2xl sm:text-3xl font-bold text-brand-dark text-balance">Transparência e compromisso</h2>
+              <p className="mt-2 text-[15px] text-foreground/70 leading-relaxed">
+                Acesse documentos, registros e informações institucionais que fortalecem a relação de confiança entre a Família Hùndésô, a comunidade, parceiros e apoiadores.
+              </p>
+            </div>
+            <Link to="/transparencia" className="shrink-0 inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-bold text-white hover:bg-brand-earth transition">
+              Acessar transparência <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
