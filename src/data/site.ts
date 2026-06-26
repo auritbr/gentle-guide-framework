@@ -211,6 +211,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.hands, IMAGES.group, IMAGES.community, IMAGES.elder, IMAGES.workshop, IMAGES.children],
   },
   {
     slug: "natal-da-gente",
@@ -232,19 +233,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
-    cardGrupos: [
-      {
-        titulo: "Destaques",
-        cards: [
-          { titulo: "Doações" },
-          { titulo: "Escuta" },
-          { titulo: "Afeto" },
-          { titulo: "Esperança" },
-          { titulo: "Apoio social" },
-          { titulo: "Coletividade" },
-        ],
-      },
-    ],
+    galeria: [IMAGES.group, IMAGES.community, IMAGES.children, IMAGES.hands, IMAGES.elder, IMAGES.dance],
   },
   {
     slug: "alfabetizacao",
