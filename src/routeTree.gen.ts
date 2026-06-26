@@ -11,8 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ComoAjudarRouteImport } from './routes/como-ajudar'
 import { Route as IndexRouteImport } from './routes/index'
@@ -27,6 +30,11 @@ const QuemSomosRoute = QuemSomosRouteImport.update({
   path: '/quem-somos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
   id: '/o-que-fazemos',
   path: '/o-que-fazemos',
@@ -35,6 +43,16 @@ const OQueFazemosRoute = OQueFazemosRouteImport.update({
 const NoticiasRoute = NoticiasRouteImport.update({
   id: '/noticias',
   path: '/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipeRoute = EquipeRouteImport.update({
+  id: '/equipe',
+  path: '/equipe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -57,8 +75,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/como-ajudar': typeof ComoAjudarRoute
   '/contato': typeof ContatoRoute
+  '/equipe': typeof EquipeRoute
+  '/galeria': typeof GaleriaRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/projetos': typeof ProjetosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
@@ -66,8 +87,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/como-ajudar': typeof ComoAjudarRoute
   '/contato': typeof ContatoRoute
+  '/equipe': typeof EquipeRoute
+  '/galeria': typeof GaleriaRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/projetos': typeof ProjetosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
@@ -76,8 +100,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/como-ajudar': typeof ComoAjudarRoute
   '/contato': typeof ContatoRoute
+  '/equipe': typeof EquipeRoute
+  '/galeria': typeof GaleriaRoute
   '/noticias': typeof NoticiasRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/projetos': typeof ProjetosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
@@ -87,8 +114,11 @@ export interface FileRouteTypes {
     | '/'
     | '/como-ajudar'
     | '/contato'
+    | '/equipe'
+    | '/galeria'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
   fileRoutesByTo: FileRoutesByTo
@@ -96,8 +126,11 @@ export interface FileRouteTypes {
     | '/'
     | '/como-ajudar'
     | '/contato'
+    | '/equipe'
+    | '/galeria'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
   id:
@@ -105,8 +138,11 @@ export interface FileRouteTypes {
     | '/'
     | '/como-ajudar'
     | '/contato'
+    | '/equipe'
+    | '/galeria'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
   fileRoutesById: FileRoutesById
@@ -115,8 +151,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComoAjudarRoute: typeof ComoAjudarRoute
   ContatoRoute: typeof ContatoRoute
+  EquipeRoute: typeof EquipeRoute
+  GaleriaRoute: typeof GaleriaRoute
   NoticiasRoute: typeof NoticiasRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
+  ProjetosRoute: typeof ProjetosRoute
   QuemSomosRoute: typeof QuemSomosRoute
   TransparenciaRoute: typeof TransparenciaRoute
 }
@@ -137,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuemSomosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/o-que-fazemos': {
       id: '/o-que-fazemos'
       path: '/o-que-fazemos'
@@ -149,6 +195,20 @@ declare module '@tanstack/react-router' {
       path: '/noticias'
       fullPath: '/noticias'
       preLoaderRoute: typeof NoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipe': {
+      id: '/equipe'
+      path: '/equipe'
+      fullPath: '/equipe'
+      preLoaderRoute: typeof EquipeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -179,8 +239,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComoAjudarRoute: ComoAjudarRoute,
   ContatoRoute: ContatoRoute,
+  EquipeRoute: EquipeRoute,
+  GaleriaRoute: GaleriaRoute,
   NoticiasRoute: NoticiasRoute,
   OQueFazemosRoute: OQueFazemosRoute,
+  ProjetosRoute: ProjetosRoute,
   QuemSomosRoute: QuemSomosRoute,
   TransparenciaRoute: TransparenciaRoute,
 }

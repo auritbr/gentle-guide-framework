@@ -24,33 +24,14 @@ export const NAV = [
     label: "Quem Somos",
     to: "/quem-somos",
     children: [
-      { label: "Nossa História", to: "/quem-somos#historia" },
-      { label: "Missão, Visão e Valores", to: "/quem-somos#missao" },
-      { label: "Diretoria", to: "/quem-somos#diretoria" },
+      { label: "Quem Somos", to: "/quem-somos" },
+      { label: "Transparência", to: "/transparencia" },
+      { label: "Equipe", to: "/equipe" },
     ],
   },
-  {
-    label: "O Que Fazemos",
-    to: "/o-que-fazemos",
-    children: [
-      { label: "Cultura e Ancestralidade", to: "/o-que-fazemos#cultura" },
-      { label: "Projetos Sociais", to: "/o-que-fazemos#projetos" },
-      { label: "Ponto de Cultura", to: "/o-que-fazemos#ponto" },
-      { label: "Turismo Cultural", to: "/o-que-fazemos#turismo" },
-      { label: "Acervo e Memória", to: "/o-que-fazemos#acervo" },
-    ],
-  },
-  {
-    label: "Como Ajudar",
-    to: "/como-ajudar",
-    children: [
-      { label: "Doações", to: "/como-ajudar#doacoes" },
-      { label: "Parcerias", to: "/como-ajudar#parcerias" },
-      { label: "Voluntariado", to: "/como-ajudar#voluntariado" },
-    ],
-  },
-  { label: "Transparência", to: "/transparencia" },
+  { label: "Projetos", to: "/projetos" },
   { label: "Notícias", to: "/noticias" },
+  { label: "Galeria", to: "/galeria" },
   { label: "Contato", to: "/contato" },
 ];
 

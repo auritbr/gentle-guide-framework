@@ -38,15 +38,15 @@ function Index() {
       <section className="py-24 sm:py-32 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Quem Somos</div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark text-balance leading-[1.05]">
-              Família Hùndésô: <span className="highlight-stripe">quem somos?</span>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-brand-earth font-semibold">Quem Somos</div>
+            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] md:text-[44px] lg:text-[52px] font-bold text-brand-dark text-balance leading-[1.1]">
+              Família Hùndésô: <span className="text-brand-earth">quem somos?</span>
             </h2>
           </div>
-          <div className="space-y-6 text-base sm:text-lg leading-relaxed text-foreground/80">
+          <div className="space-y-5 text-[17px] sm:text-[18px] lg:text-[20px] leading-[1.7] text-foreground/80">
             <p>A Família Hùndésô é uma organização de atuação religiosa, social, cultural e beneficente, comprometida com a preservação das tradições afro-brasileiras, o fortalecimento da identidade ancestral e a promoção de ações voltadas à cidadania, cultura, educação, memória e cuidado comunitário.</p>
             <p>A partir de sua trajetória, a instituição se consolidou como espaço de acolhimento, resistência, transmissão de saberes e valorização das comunidades tradicionais de terreiro.</p>
-            <Link to="/quem-somos" className="inline-flex items-center gap-2 font-semibold text-brand-earth hover:text-brand-red">
+            <Link to="/quem-somos" className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-brand-earth hover:text-brand-red">
               Saiba mais sobre nossa trajetória <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

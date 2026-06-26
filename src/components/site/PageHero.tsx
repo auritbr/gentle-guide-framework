@@ -25,7 +25,7 @@ export function PageHero({
             {eyebrow}
           </div>
         )}
-        <h1 className="mt-6 max-w-4xl font-display text-4xl font-bold leading-[1.05] text-white text-balance sm:text-6xl lg:text-7xl">
+        <h1 className="mt-6 max-w-4xl font-display text-[36px] font-bold leading-[1.1] text-white text-balance sm:text-[44px] lg:text-[56px]">
           {title}{" "}
           {highlight && (
             <span className="relative inline-block">
