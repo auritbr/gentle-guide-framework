@@ -20,6 +20,7 @@ import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ComoAjudarRouteImport } from './routes/como-ajudar'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 
@@ -78,6 +79,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetosIndexRoute = ProjetosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProjetosRoute,
+} as any)
 const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/transparencia': typeof TransparenciaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/': typeof ProjetosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -113,11 +120,11 @@ export interface FileRoutesByTo {
   '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
-  '/projetos': typeof ProjetosRouteWithChildren
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos': typeof ProjetosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -134,6 +141,7 @@ export interface FileRoutesById {
   '/transparencia': typeof TransparenciaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
+  '/projetos/': typeof ProjetosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +159,7 @@ export interface FileRouteTypes {
     | '/transparencia'
     | '/noticias/$slug'
     | '/projetos/$slug'
+    | '/projetos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -161,11 +170,11 @@ export interface FileRouteTypes {
     | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
-    | '/projetos'
     | '/quem-somos'
     | '/transparencia'
     | '/noticias/$slug'
     | '/projetos/$slug'
+    | '/projetos'
   id:
     | '__root__'
     | '/'
@@ -181,6 +190,7 @@ export interface FileRouteTypes {
     | '/transparencia'
     | '/noticias/$slug'
     | '/projetos/$slug'
+    | '/projetos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -276,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projetos/': {
+      id: '/projetos/'
+      path: '/'
+      fullPath: '/projetos/'
+      preLoaderRoute: typeof ProjetosIndexRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
     '/projetos/$slug': {
       id: '/projetos/$slug'
       path: '/$slug'
@@ -307,10 +324,12 @@ const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(
 
 interface ProjetosRouteChildren {
   ProjetosSlugRoute: typeof ProjetosSlugRoute
+  ProjetosIndexRoute: typeof ProjetosIndexRoute
 }
 
 const ProjetosRouteChildren: ProjetosRouteChildren = {
   ProjetosSlugRoute: ProjetosSlugRoute,
+  ProjetosIndexRoute: ProjetosIndexRoute,
 }
 
 const ProjetosRouteWithChildren = ProjetosRoute._addFileChildren(
