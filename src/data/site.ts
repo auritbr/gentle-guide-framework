@@ -120,6 +120,7 @@ export type ProjetoDetalhe = {
   imagem: string;
   secoes: ProjetoSecao[];
   cardGrupos?: ProjetoCardGrupo[];
+  galeria?: string[];
 };
 
 export const PROJETOS_LISTA: ProjetoDetalhe[] = [
