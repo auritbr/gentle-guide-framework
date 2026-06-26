@@ -46,8 +46,15 @@ function pickIcon(titulo: string): LucideIcon {
   return ICON_MAP[titulo] ?? Sparkles;
 }
 
-export function InstitutionalCard({ titulo, texto }: { titulo: string; texto?: string }) {
+export function InstitutionalCard({
+  titulo,
+  texto,
+}: {
+  titulo: string;
+  texto?: string | string[];
+}) {
   const Icon = pickIcon(titulo);
+  const paragrafos = Array.isArray(texto) ? texto : texto ? [texto] : [];
   return (
     <article className="group relative flex h-full flex-col rounded-2xl bg-white p-6 ring-1 ring-brand-earth/10 shadow-[0_1px_2px_rgba(60,40,20,0.04),0_8px_24px_-12px_rgba(60,40,20,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(60,40,20,0.06),0_18px_38px_-18px_rgba(60,40,20,0.22)] hover:ring-brand-gold/40">
       <span
@@ -60,8 +67,12 @@ export function InstitutionalCard({ titulo, texto }: { titulo: string; texto?: s
       <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-brand-dark">
         {titulo}
       </h3>
-      {texto && (
-        <p className="mt-2.5 text-sm leading-relaxed text-foreground/70">{texto}</p>
+      {paragrafos.length > 0 && (
+        <div className="mt-2.5 space-y-2.5 text-sm leading-relaxed text-foreground/70">
+          {paragrafos.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
       )}
       <span
         aria-hidden
