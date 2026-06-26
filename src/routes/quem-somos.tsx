@@ -13,6 +13,8 @@ import {
   Globe2,
   ShieldCheck,
   CheckCircle2,
+  Flame,
+  ArrowRight,
 } from "lucide-react";
 import { IMAGES } from "@/data/site";
 
