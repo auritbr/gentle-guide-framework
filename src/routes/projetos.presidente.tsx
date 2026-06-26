@@ -193,8 +193,8 @@ function PresidentePage() {
             Memória, liderança e continuidade
           </h2>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-white/10 transition-colors">
-              <ArrowLeft className="h-4 w-4" /> Voltar para projetos
+            <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-white/10 transition-colors">
+              <ArrowLeft className="h-4 w-4" /> Voltar para página inicial
             </Link>
             <Link to="/contato" className="inline-flex items-center justify-center rounded-full bg-gradient-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:opacity-90 transition-opacity">
               Fale conosco
