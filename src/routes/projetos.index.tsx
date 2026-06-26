@@ -3,7 +3,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { IMAGES, PILARES, POLITICAS, PROJETOS_LISTA } from "@/data/site";
 import { ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/projetos")({
+export const Route = createFileRoute("/projetos/")({
   head: () => ({
     meta: [
       { title: "Projetos — Família Hùndésô" },
