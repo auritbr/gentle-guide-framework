@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, Users, BookOpen, Sparkles, Check } from "lucide-react";
 import { IMAGES, AREAS, PROJETOS, NOTICIAS } from "@/data/site";
-import { PageHero } from "@/components/site/PageHero";
+import { HeroCarousel } from "@/components/site/HeroCarousel";
+import { NewsCard } from "@/components/site/NewsCard";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,20 +20,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <PageHero
-        image={IMAGES.heroHome}
-        eyebrow="Família Hùndésô"
-        title="Ancestralidade, cultura e"
-        highlight="cuidado comunitário"
-        subtitle="A Família Hùndésô atua na preservação das tradições de matriz africana, na valorização da memória ancestral e no desenvolvimento de ações sociais, culturais e educativas junto à comunidade."
-      >
-        <Link to="/quem-somos" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-gold transition">
-          Conheça nossa história <ArrowRight className="h-4 w-4" />
-        </Link>
-        <Link to="/como-ajudar" className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition">
-          Apoie essa missão
-        </Link>
-      </PageHero>
+      <HeroCarousel />
 
       {/* Apresentação */}
       <section className="py-24 sm:py-32 bg-brand-cream">
@@ -238,21 +226,8 @@ function Index() {
             </Link>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {NOTICIAS.map((n) => (
-              <article key={n.titulo} className="group overflow-hidden rounded-3xl bg-brand-cream hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={n.imagem} alt={n.titulo} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-xs">
-                    <span className="rounded-full bg-brand-earth px-3 py-1 font-semibold text-white">{n.categoria}</span>
-                    <span className="text-foreground/60">{n.data}</span>
-                  </div>
-                  <h3 className="mt-3 font-display text-xl font-bold text-brand-dark">{n.titulo}</h3>
-                  <p className="mt-2 text-sm text-foreground/70">{n.resumo}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-earth hover:text-brand-red">Ler mais <ArrowRight className="h-3.5 w-3.5"/></button>
-                </div>
-              </article>
+            {NOTICIAS.slice(0, 3).map((n) => (
+              <NewsCard key={n.id} n={n} />
             ))}
           </div>
         </div>

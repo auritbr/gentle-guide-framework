@@ -1,56 +1,117 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Facebook, Youtube, Linkedin, MessageCircle, Mail, MapPin, Phone } from "lucide-react";
+
+const COLUMNS = [
+  {
+    title: "Institucional",
+    links: [
+      { label: "Quem Somos", to: "/quem-somos" },
+      { label: "Transparência", to: "/transparencia" },
+      { label: "Equipe", to: "/equipe" },
+      { label: "Projetos", to: "/projetos" },
+    ],
+  },
+  {
+    title: "Conteúdo",
+    links: [
+      { label: "Notícias", to: "/noticias" },
+      { label: "Galeria", to: "/galeria" },
+      { label: "Acervo e Memória", to: "/o-que-fazemos" },
+      { label: "Eventos", to: "/noticias" },
+    ],
+  },
+  {
+    title: "Como apoiar",
+    links: [
+      { label: "Apoie Agora", to: "/como-ajudar" },
+      { label: "Parcerias", to: "/como-ajudar" },
+      { label: "Voluntariado", to: "/como-ajudar" },
+      { label: "Doações", to: "/como-ajudar" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Política de Privacidade", to: "/contato" },
+      { label: "Política de Cookies", to: "/contato" },
+      { label: "Termos de Uso", to: "/contato" },
+    ],
+  },
+] as const;
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white/80">
+    <footer className="bg-[#F7F2E9] text-brand-dark border-t border-brand-earth/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-gold text-brand-dark font-display font-bold">FH</div>
-              <div className="font-display text-xl font-bold text-white">Família Hùndésô</div>
+              <div className="font-display text-lg font-bold">Família Hùndésô</div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed">
-              Organização cultural, religiosa, social e comunitária de matriz africana,
-              comprometida com a ancestralidade, a memória e a transformação social.
+            <p className="mt-4 text-sm leading-relaxed text-foreground/70">
+              Tradição, cultura, ancestralidade e comunidade.
             </p>
           </div>
-          <div>
-            <h4 className="font-display text-base font-bold text-white">Links rápidos</h4>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li><Link to="/quem-somos" className="hover:text-brand-gold">Quem Somos</Link></li>
-              <li><Link to="/o-que-fazemos" className="hover:text-brand-gold">O Que Fazemos</Link></li>
-              <li><Link to="/transparencia" className="hover:text-brand-gold">Transparência</Link></li>
-              <li><Link to="/como-ajudar" className="hover:text-brand-gold">Como Ajudar</Link></li>
-              <li><Link to="/noticias" className="hover:text-brand-gold">Notícias</Link></li>
-              <li><Link to="/contato" className="hover:text-brand-gold">Contato</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-display text-base font-bold text-white">Contato</h4>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 text-brand-gold mt-0.5" /><span>Endereço institucional<br/>a ser informado</span></li>
-              <li className="flex gap-2"><Phone className="h-4 w-4 shrink-0 text-brand-gold mt-0.5" /><span>WhatsApp institucional</span></li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 shrink-0 text-brand-gold mt-0.5" /><span>contato@familiahundeso.org.br</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-display text-base font-bold text-white">Redes sociais</h4>
-            <div className="mt-4 flex gap-3">
-              <a href="#" className="grid h-10 w-10 place-items-center rounded-full bg-white/5 hover:bg-brand-gold hover:text-brand-dark transition" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
-              <a href="#" className="grid h-10 w-10 place-items-center rounded-full bg-white/5 hover:bg-brand-gold hover:text-brand-dark transition" aria-label="Facebook"><Facebook className="h-4 w-4" /></a>
-              <a href="#" className="grid h-10 w-10 place-items-center rounded-full bg-white/5 hover:bg-brand-gold hover:text-brand-dark transition" aria-label="YouTube"><Youtube className="h-4 w-4" /></a>
+
+          {COLUMNS.map((col) => (
+            <div key={col.title}>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-brand-dark">{col.title}</h4>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.to} className="text-foreground/70 hover:text-brand-earth transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <h4 className="mt-6 font-display text-base font-bold text-white">Políticas</h4>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li><a href="#" className="hover:text-brand-gold">Política de Privacidade</a></li>
-              <li><a href="#" className="hover:text-brand-gold">Termos de Uso</a></li>
-            </ul>
+          ))}
+        </div>
+
+        <div className="my-12 h-px bg-brand-earth/15" />
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
+              <Mail className="h-4 w-4" /> E-mail
+            </h5>
+            <p className="mt-2 text-sm text-foreground/75">contato@familiahundeso.org.br</p>
+          </div>
+          <div>
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
+              <Phone className="h-4 w-4" /> Telefone / WhatsApp
+            </h5>
+            <p className="mt-2 text-sm text-foreground/75">(00) 00000-0000</p>
+          </div>
+          <div>
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
+              <MapPin className="h-4 w-4" /> Endereço
+            </h5>
+            <p className="mt-2 text-sm text-foreground/75">Endereço da instituição</p>
+          </div>
+          <div>
+            <h5 className="text-xs font-bold uppercase tracking-wider text-brand-earth">Conecte-se</h5>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {[
+                { icon: Instagram, label: "Instagram", href: "#" },
+                { icon: Facebook, label: "Facebook", href: "#" },
+                { icon: Youtube, label: "YouTube", href: "#" },
+                { icon: Linkedin, label: "LinkedIn", href: "#" },
+                { icon: MessageCircle, label: "WhatsApp", href: "#" },
+              ].map(({ icon: Icon, label, href }) => (
+                <a key={label} href={href} aria-label={label} className="grid h-9 w-9 place-items-center rounded-full bg-white text-brand-dark ring-1 ring-brand-earth/15 hover:bg-brand-gold hover:text-brand-dark transition">
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} Família Hùndésô. Todos os direitos reservados.
+
+        <div className="mt-12 border-t border-brand-earth/15 pt-6 text-center text-xs text-foreground/60 space-y-1">
+          <div>CNPJ: 00.000.000/0001-00 — Família Hùndésô</div>
+          <div>© {new Date().getFullYear()} Família Hùndésô. Todos os direitos reservados.</div>
         </div>
       </div>
     </footer>
