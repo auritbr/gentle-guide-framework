@@ -70,9 +70,9 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <Link to={l.to as string} className="text-foreground/70 hover:text-brand-earth transition-colors">
+                    <a href={l.to} className="text-foreground/70 hover:text-brand-earth transition-colors">
                       {l.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
