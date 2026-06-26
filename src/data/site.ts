@@ -19,7 +19,6 @@ export const IMAGES = {
 };
 
 export const NAV = [
-  { label: "Início", to: "/" },
   {
     label: "Quem Somos",
     to: "/quem-somos",
@@ -31,6 +30,15 @@ export const NAV = [
     ],
   },
   { label: "Projetos", to: "/projetos" },
+  {
+    label: "Como ajudar",
+    to: "/como-ajudar/doacao-financeira",
+    children: [
+      { label: "Doação financeira", to: "/como-ajudar/doacao-financeira" },
+      { label: "Doação de mantimentos", to: "/como-ajudar/doacao-mantimentos" },
+      { label: "Doação de itens", to: "/como-ajudar/doacao-itens" },
+    ],
+  },
   { label: "Notícias", to: "/noticias" },
   { label: "Galeria", to: "/galeria" },
   { label: "Contato", to: "/contato" },

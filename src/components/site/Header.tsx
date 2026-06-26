@@ -70,7 +70,7 @@ export function Header() {
 
         <div className="flex items-center gap-2 shrink-0">
           <Link
-            to="/como-ajudar"
+            to="/como-ajudar/doacao-financeira"
             className="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-warm px-4 py-2 text-[13px] font-bold uppercase tracking-[0.08em] text-white shadow-md hover:brightness-110 transition"
           >
             Apoie Agora
@@ -114,7 +114,7 @@ export function Header() {
               </div>
             ))}
             <Link
-              to="/como-ajudar"
+              to="/como-ajudar/doacao-financeira"
               onClick={() => setOpen(false)}
               className="mt-3 block rounded-full bg-gradient-warm px-5 py-3 text-center text-sm font-bold uppercase tracking-wider text-white"
             >
