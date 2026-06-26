@@ -26,11 +26,11 @@ function ProjetosPage() {
 
       {/* Introdução */}
       <section className="py-16 sm:py-20 bg-brand-cream">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-[1fr_2fr] lg:gap-16 items-start">
           <div>
             <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Nossa atuação</div>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[42px] font-bold text-brand-dark leading-tight text-balance">
-              Projetos que fortalecem cultura, comunidade e cidadania
+              Como atuamos
             </h2>
           </div>
           <div className="space-y-5 text-base sm:text-lg text-foreground/80 leading-relaxed">
@@ -66,7 +66,7 @@ function ProjetosPage() {
             <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-[42px] font-bold text-brand-dark">Nossos projetos</h2>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PROJETOS_LISTA.map((p) => (
+            {PROJETOS_LISTA.filter((p) => p.slug !== "comunidade-riacho-branco" && p.slug !== "rota-dos-voduns").map((p) => (
               <article key={p.slug} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow">
                 <div className="h-52 overflow-hidden">
                   <img src={p.imagem} alt={p.titulo} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
@@ -90,8 +90,43 @@ function ProjetosPage() {
         </div>
       </section>
 
-      {/* Políticas públicas */}
+      {/* Rota dos Voduns */}
       <section className="py-16 sm:py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Afroturismo comunitário</div>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-[42px] font-bold text-brand-dark">Rota dos Voduns</h2>
+            <p className="mt-5 text-base sm:text-lg text-foreground/80 leading-relaxed">
+              A Rota dos Voduns reúne experiências de memória, território, ancestralidade, natureza e afroturismo comunitário ligadas ao Hùnkpámè Ayónó Hùndésô e à Comunidade Riacho Branco.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {PROJETOS_LISTA.filter((p) => p.slug === "comunidade-riacho-branco" || p.slug === "rota-dos-voduns").map((p) => (
+              <article key={p.slug} className="group flex flex-col overflow-hidden rounded-2xl bg-brand-cream shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow">
+                <div className="h-52 overflow-hidden">
+                  <img src={p.imagem} alt={p.titulo} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-[11px] uppercase tracking-[0.22em] font-semibold text-brand-earth">{p.label}</span>
+                  <h3 className="mt-2 font-display text-xl font-bold text-brand-dark">{p.titulo}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/80">{p.resumo}</p>
+                  <Link
+                    to="/projetos/$slug"
+                    params={{ slug: p.slug }}
+                    className="mt-5 inline-flex items-center gap-2 self-start rounded-full bg-brand-dark px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-brand-earth transition-colors"
+                  >
+                    Saiba mais
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Políticas públicas */}
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
             <div>
@@ -108,7 +143,7 @@ function ProjetosPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {POLITICAS.map((bloco) => (
-              <div key={bloco.titulo} className="rounded-2xl bg-brand-cream p-7 border-l-4 border-brand-gold">
+              <div key={bloco.titulo} className="rounded-2xl bg-white p-7 border-l-4 border-brand-gold">
                 <h3 className="font-display text-xl font-bold text-brand-dark">{bloco.titulo}</h3>
                 <div className="mt-3 space-y-3 text-sm sm:text-base leading-relaxed text-foreground/75">
                   {bloco.paragrafos.map((p, i) => <p key={i}>{p}</p>)}
