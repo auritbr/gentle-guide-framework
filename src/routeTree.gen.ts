@@ -24,6 +24,7 @@ import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ComoAjudarIndexRouteImport } from './routes/como-ajudar.index'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as ComoAjudarPontoDeColetaRouteImport } from './routes/como-ajudar.ponto-de-coleta'
 import { Route as ComoAjudarDoacaoMantimentosRouteImport } from './routes/como-ajudar.doacao-mantimentos'
 import { Route as ComoAjudarDoacaoItensRouteImport } from './routes/como-ajudar.doacao-itens'
 import { Route as ComoAjudarDoacaoFinanceiraRouteImport } from './routes/como-ajudar.doacao-financeira'
@@ -103,6 +104,11 @@ const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NoticiasRoute,
 } as any)
+const ComoAjudarPontoDeColetaRoute = ComoAjudarPontoDeColetaRouteImport.update({
+  id: '/como-ajudar/ponto-de-coleta',
+  path: '/como-ajudar/ponto-de-coleta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComoAjudarDoacaoMantimentosRoute =
   ComoAjudarDoacaoMantimentosRouteImport.update({
     id: '/como-ajudar/doacao-mantimentos',
@@ -135,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
   '/como-ajudar/doacao-itens': typeof ComoAjudarDoacaoItensRoute
   '/como-ajudar/doacao-mantimentos': typeof ComoAjudarDoacaoMantimentosRoute
+  '/como-ajudar/ponto-de-coleta': typeof ComoAjudarPontoDeColetaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
   '/como-ajudar/doacao-itens': typeof ComoAjudarDoacaoItensRoute
   '/como-ajudar/doacao-mantimentos': typeof ComoAjudarDoacaoMantimentosRoute
+  '/como-ajudar/ponto-de-coleta': typeof ComoAjudarPontoDeColetaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/como-ajudar': typeof ComoAjudarIndexRoute
@@ -174,6 +182,7 @@ export interface FileRoutesById {
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
   '/como-ajudar/doacao-itens': typeof ComoAjudarDoacaoItensRoute
   '/como-ajudar/doacao-mantimentos': typeof ComoAjudarDoacaoMantimentosRoute
+  '/como-ajudar/ponto-de-coleta': typeof ComoAjudarPontoDeColetaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/como-ajudar/doacao-financeira'
     | '/como-ajudar/doacao-itens'
     | '/como-ajudar/doacao-mantimentos'
+    | '/como-ajudar/ponto-de-coleta'
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/como-ajudar/'
@@ -214,6 +224,7 @@ export interface FileRouteTypes {
     | '/como-ajudar/doacao-financeira'
     | '/como-ajudar/doacao-itens'
     | '/como-ajudar/doacao-mantimentos'
+    | '/como-ajudar/ponto-de-coleta'
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/como-ajudar'
@@ -234,6 +245,7 @@ export interface FileRouteTypes {
     | '/como-ajudar/doacao-financeira'
     | '/como-ajudar/doacao-itens'
     | '/como-ajudar/doacao-mantimentos'
+    | '/como-ajudar/ponto-de-coleta'
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/como-ajudar/'
@@ -255,6 +267,7 @@ export interface RootRouteChildren {
   ComoAjudarDoacaoFinanceiraRoute: typeof ComoAjudarDoacaoFinanceiraRoute
   ComoAjudarDoacaoItensRoute: typeof ComoAjudarDoacaoItensRoute
   ComoAjudarDoacaoMantimentosRoute: typeof ComoAjudarDoacaoMantimentosRoute
+  ComoAjudarPontoDeColetaRoute: typeof ComoAjudarPontoDeColetaRoute
   ComoAjudarIndexRoute: typeof ComoAjudarIndexRoute
 }
 
@@ -365,6 +378,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NoticiasSlugRouteImport
       parentRoute: typeof NoticiasRoute
     }
+    '/como-ajudar/ponto-de-coleta': {
+      id: '/como-ajudar/ponto-de-coleta'
+      path: '/como-ajudar/ponto-de-coleta'
+      fullPath: '/como-ajudar/ponto-de-coleta'
+      preLoaderRoute: typeof ComoAjudarPontoDeColetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/como-ajudar/doacao-mantimentos': {
       id: '/como-ajudar/doacao-mantimentos'
       path: '/como-ajudar/doacao-mantimentos'
@@ -431,6 +451,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoAjudarDoacaoFinanceiraRoute: ComoAjudarDoacaoFinanceiraRoute,
   ComoAjudarDoacaoItensRoute: ComoAjudarDoacaoItensRoute,
   ComoAjudarDoacaoMantimentosRoute: ComoAjudarDoacaoMantimentosRoute,
+  ComoAjudarPontoDeColetaRoute: ComoAjudarPontoDeColetaRoute,
   ComoAjudarIndexRoute: ComoAjudarIndexRoute,
 }
 export const routeTree = rootRouteImport
