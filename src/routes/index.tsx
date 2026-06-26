@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Coins, Package, Apple } from "lucide-react";
+import { ArrowRight, Coins, Package, Apple, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import { IMAGES, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
@@ -37,30 +38,6 @@ function Index() {
             <Link to="/quem-somos" className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-brand-earth hover:text-brand-red">
               Saiba mais sobre nossa trajetória <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Missão Visão Valores */}
-      <section className="py-16 sm:py-20 bg-brand-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{backgroundImage:`url(${IMAGES.culture})`,backgroundSize:'cover',backgroundPosition:'center'}}/>
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/95 to-brand-dark"/>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-[0.25em] text-brand-gold font-semibold">Nossos princípios</div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-balance">O que nos guia</h2>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              {t:"Missão",d:"Preservar, fortalecer e compartilhar saberes ancestrais, promovendo cultura, espiritualidade, educação e cuidado comunitário.",g:"bg-gradient-warm"},
-              {t:"Visão",d:"Ser referência na valorização das tradições de matriz africana, na defesa da memória ancestral e na promoção de ações sociais e culturais transformadoras.",g:"bg-gradient-earth"},
-              {t:"Valores",d:"Ancestralidade, respeito, comunidade, inclusão, solidariedade, memória, fé, cultura e compromisso social.",g:"bg-gradient-gold"},
-            ].map((c) => (
-              <div key={c.t} className={`${c.g} rounded-3xl p-8 shadow-2xl`}>
-                <h3 className="font-display text-3xl font-bold text-white">{c.t}</h3>
-                <p className="mt-4 text-white/90 leading-relaxed">{c.d}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -117,14 +94,12 @@ function Index() {
       {/* Projetos e iniciativas */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Em destaque</div>
-              <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">Projetos e iniciativas</h2>
-            </div>
-            <Link to="/projetos" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-earth hover:text-brand-red">
-              Ver todos <ArrowRight className="h-4 w-4"/>
-            </Link>
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Em destaque</div>
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">Memória, luta e tradição</h2>
+            <p className="mt-4 text-base sm:text-lg text-foreground/70 leading-relaxed">
+              Conheça frentes históricas, culturais e sociais que fazem parte da trajetória da Família Hùndésô e fortalecem sua atuação comunitária, religiosa e cultural.
+            </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
