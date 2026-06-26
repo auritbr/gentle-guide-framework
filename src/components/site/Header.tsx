@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV } from "@/data/site";
@@ -6,6 +6,8 @@ import { NAV } from "@/data/site";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -17,7 +19,11 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all ${
-        scrolled ? "bg-brand-dark/90 backdrop-blur-md shadow-lg" : "bg-brand-dark/60 backdrop-blur-sm"
+        scrolled
+          ? "bg-brand-dark/95 backdrop-blur-md shadow-lg"
+          : isHome
+            ? "bg-brand-dark/85 backdrop-blur-md shadow-md"
+            : "bg-brand-dark/60 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
