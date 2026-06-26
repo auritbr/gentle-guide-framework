@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { NewsCard } from "@/components/site/NewsCard";
 import { Pagination } from "@/components/site/Pagination";
 
-export const Route = createFileRoute("/noticias")({
+export const Route = createFileRoute("/noticias/")({
   head: () => ({
     meta: [
       { title: "Notícias — Família Hùndésô" },
