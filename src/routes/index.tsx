@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Coins, Package, Apple } from "lucide-react";
+import { ArrowRight, Coins, Package, Apple, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import { IMAGES, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
@@ -37,30 +38,6 @@ function Index() {
             <Link to="/quem-somos" className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-brand-earth hover:text-brand-red">
               Saiba mais sobre nossa trajetória <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Missão Visão Valores */}
-      <section className="py-16 sm:py-20 bg-brand-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{backgroundImage:`url(${IMAGES.culture})`,backgroundSize:'cover',backgroundPosition:'center'}}/>
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/95 to-brand-dark"/>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-[0.25em] text-brand-gold font-semibold">Nossos princípios</div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-balance">O que nos guia</h2>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              {t:"Missão",d:"Preservar, fortalecer e compartilhar saberes ancestrais, promovendo cultura, espiritualidade, educação e cuidado comunitário.",g:"bg-gradient-warm"},
-              {t:"Visão",d:"Ser referência na valorização das tradições de matriz africana, na defesa da memória ancestral e na promoção de ações sociais e culturais transformadoras.",g:"bg-gradient-earth"},
-              {t:"Valores",d:"Ancestralidade, respeito, comunidade, inclusão, solidariedade, memória, fé, cultura e compromisso social.",g:"bg-gradient-gold"},
-            ].map((c) => (
-              <div key={c.t} className={`${c.g} rounded-3xl p-8 shadow-2xl`}>
-                <h3 className="font-display text-3xl font-bold text-white">{c.t}</h3>
-                <p className="mt-4 text-white/90 leading-relaxed">{c.d}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -117,14 +94,12 @@ function Index() {
       {/* Projetos e iniciativas */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Em destaque</div>
-              <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">Projetos e iniciativas</h2>
-            </div>
-            <Link to="/projetos" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-earth hover:text-brand-red">
-              Ver todos <ArrowRight className="h-4 w-4"/>
-            </Link>
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Em destaque</div>
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">Memória, luta e tradição</h2>
+            <p className="mt-4 text-base sm:text-lg text-foreground/70 leading-relaxed">
+              Conheça frentes históricas, culturais e sociais que fazem parte da trajetória da Família Hùndésô e fortalecem sua atuação comunitária, religiosa e cultural.
+            </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -266,22 +241,97 @@ function Index() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-24 bg-gradient-earth text-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-balance">Receba novidades da Família Hùndésô</h2>
-          <p className="mt-4 text-lg text-white/85">Cadastre-se para acompanhar notícias, ações culturais, projetos, eventos e comunicados da instituição.</p>
-          <form className="mt-10 grid gap-4 text-left max-w-2xl mx-auto" onSubmit={(e)=>e.preventDefault()}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <input placeholder="Nome" className="rounded-full bg-white/10 backdrop-blur border border-white/20 px-5 py-3 placeholder:text-white/50 text-white focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
-              <input type="email" placeholder="E-mail" className="rounded-full bg-white/10 backdrop-blur border border-white/20 px-5 py-3 placeholder:text-white/50 text-white focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
-            </div>
-            <label className="flex items-start gap-2 text-sm text-white/80"><input type="checkbox" className="mt-1"/> Desejo receber novidades e comunicados da Família Hùndésô.</label>
-            <label className="flex items-start gap-2 text-sm text-white/80"><input type="checkbox" className="mt-1"/> Li e concordo com a Política de Privacidade.</label>
-            <button className="justify-self-center mt-2 rounded-full bg-gradient-gold px-8 py-3 font-bold text-brand-dark hover:scale-105 transition-transform">Cadastrar</button>
-          </form>
+      {/* Calendário Litúrgico (prévia) */}
+      <CalendarPreview />
+
+      {/* CTA Final */}
+      <section className="py-14 sm:py-20 bg-gradient-to-br from-brand-dark via-brand-earth to-brand-gold text-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-balance leading-tight">
+            Fortaleça a memória, a cultura e a comunidade
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed">
+            Acompanhe as ações da Família Hùndésô, conheça sua trajetória e apoie a continuidade de projetos sociais, culturais, religiosos e comunitários.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full bg-white text-brand-dark px-7 py-3 text-sm font-bold hover:bg-brand-cream transition">
+              Conhecer projetos <ArrowRight className="h-4 w-4"/>
+            </Link>
+            <Link to="/como-ajudar/doacao-financeira" className="inline-flex items-center gap-2 rounded-full border-2 border-white/80 px-7 py-3 text-sm font-bold text-white hover:bg-white/10 transition">
+              Como ajudar
+            </Link>
+          </div>
         </div>
       </section>
     </>
+  );
+}
+
+const MESES_PT = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+
+function CalendarPreview() {
+  const now = new Date();
+  const [idx, setIdx] = useState(now.getMonth());
+  const eventos: Record<number, string[]> = {
+    0: ["Celebração litúrgica de abertura do ano", "Atividade interna da comunidade"],
+    1: ["Rito comunitário de fevereiro"],
+    2: ["Momento de memória e ancestralidade"],
+    3: ["Celebração de tradição"],
+    4: ["Atividade litúrgica de maio"],
+    5: ["Encontro de fé e comunidade"],
+    6: ["Obrigação religiosa"],
+    7: ["Celebração ancestral"],
+    8: ["Momento de cuidado e tradição"],
+    9: ["Rito de fortalecimento comunitário"],
+    10: ["Celebração da memória ancestral"],
+    11: ["Encerramento do ciclo litúrgico"],
+  };
+  const prev = () => setIdx((i) => (i + 11) % 12);
+  const next = () => setIdx((i) => (i + 1) % 12);
+  return (
+    <section className="py-16 sm:py-20 bg-brand-cream">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Calendário Litúrgico</div>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark text-balance leading-[1.1]">
+            Um ano de fé, tradição e ancestralidade
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-foreground/75 leading-relaxed">
+            A Família Hùndésô mantém um calendário litúrgico anual com celebrações, obrigações, ritos e momentos sagrados que orientam a vivência religiosa da comunidade ao longo do ano.
+          </p>
+          <Link to="/calendario-liturgico" className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-bold text-white hover:bg-brand-earth transition">
+            Ver calendário completo <ArrowRight className="h-4 w-4"/>
+          </Link>
+        </div>
+        <div className="rounded-3xl bg-white p-6 sm:p-8 shadow-md ring-1 ring-brand-earth/10">
+          <div className="flex items-center justify-between">
+            <button onClick={prev} aria-label="Mês anterior" className="grid h-10 w-10 place-items-center rounded-full bg-brand-cream text-brand-earth hover:bg-brand-gold hover:text-brand-dark transition">
+              <ChevronLeft className="h-5 w-5"/>
+            </button>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 text-brand-earth">
+                <CalendarDays className="h-4 w-4"/>
+                <span className="text-[11px] uppercase tracking-[0.25em] font-semibold">Mês em destaque</span>
+              </div>
+              <div className="mt-1 font-display text-2xl sm:text-3xl font-bold text-brand-dark">{MESES_PT[idx]} <span className="text-brand-earth">{now.getFullYear()}</span></div>
+            </div>
+            <button onClick={next} aria-label="Próximo mês" className="grid h-10 w-10 place-items-center rounded-full bg-brand-cream text-brand-earth hover:bg-brand-gold hover:text-brand-dark transition">
+              <ChevronRight className="h-5 w-5"/>
+            </button>
+          </div>
+          <ul className="mt-6 space-y-3">
+            {(eventos[idx] ?? []).map((ev) => (
+              <li key={ev} className="flex items-start gap-3 rounded-2xl bg-brand-cream/60 px-4 py-3">
+                <span className="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-gold/30 text-brand-earth text-xs font-bold">•</span>
+                <div>
+                  <div className="text-sm font-semibold text-brand-dark">{ev}</div>
+                  <div className="text-xs text-foreground/60">Data a definir</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }

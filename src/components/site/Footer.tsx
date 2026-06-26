@@ -6,9 +6,21 @@ const COLUMNS = [
     title: "Institucional",
     links: [
       { label: "Quem Somos", to: "/quem-somos" },
+      { label: "Nosso Culto", to: "/nosso-culto" },
       { label: "Transparência", to: "/transparencia" },
       { label: "Equipe", to: "/equipe" },
+      { label: "Calendário Litúrgico", to: "/calendario-liturgico" },
+    ],
+  },
+  {
+    title: "Memória e atuação",
+    links: [
       { label: "Projetos", to: "/projetos" },
+      { label: "LGBTQIA+", to: "/projetos/lgbtqia" },
+      { label: "Página do Presidente", to: "/projetos/presidente" },
+      { label: "Maracatu", to: "/projetos/maracatu" },
+      { label: "Rota dos Voduns", to: "/projetos/rota-dos-voduns" },
+      { label: "Comunidade Riacho Branco", to: "/projetos/comunidade-riacho-branco" },
     ],
   },
   {
@@ -16,25 +28,23 @@ const COLUMNS = [
     links: [
       { label: "Notícias", to: "/noticias" },
       { label: "Galeria", to: "/galeria" },
-      { label: "Acervo e Memória", to: "/o-que-fazemos" },
-      { label: "Eventos", to: "/noticias" },
     ],
   },
   {
     title: "Como apoiar",
     links: [
-      { label: "Apoie Agora", to: "/como-ajudar" },
-      { label: "Parcerias", to: "/como-ajudar" },
-      { label: "Voluntariado", to: "/como-ajudar" },
-      { label: "Doações", to: "/como-ajudar" },
+      { label: "Doação financeira", to: "/como-ajudar/doacao-financeira" },
+      { label: "Doação de mantimentos", to: "/como-ajudar/doacao-mantimentos" },
+      { label: "Doação de itens", to: "/como-ajudar/doacao-itens" },
+      { label: "Ponto de coleta", to: "/como-ajudar/ponto-de-coleta" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Política de Privacidade", to: "/contato" },
-      { label: "Política de Cookies", to: "/contato" },
-      { label: "Termos de Uso", to: "/contato" },
+      { label: "Política de Privacidade", to: "/politica-de-privacidade" },
+      { label: "Política de Cookies", to: "/politica-de-cookies" },
+      { label: "Termos de Uso", to: "/termos-de-uso" },
     ],
   },
 ] as const;
@@ -43,7 +53,7 @@ export function Footer() {
   return (
     <footer className="bg-[#F7F2E9] text-brand-dark border-t border-brand-earth/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-gold text-brand-dark font-display font-bold">FH</div>
@@ -60,9 +70,9 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <Link to={l.to} className="text-foreground/70 hover:text-brand-earth transition-colors">
+                    <a href={l.to} className="text-foreground/70 hover:text-brand-earth transition-colors">
                       {l.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -77,19 +87,21 @@ export function Footer() {
             <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
               <Mail className="h-4 w-4" /> E-mail
             </h5>
-            <p className="mt-2 text-sm text-foreground/75">contato@familiahundeso.org.br</p>
+            <p className="mt-2 text-sm text-foreground/75 break-words">contato@familiahundeso.org.br</p>
           </div>
           <div>
             <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
               <Phone className="h-4 w-4" /> Telefone / WhatsApp
             </h5>
-            <p className="mt-2 text-sm text-foreground/75">(00) 00000-0000</p>
+            <p className="mt-2 text-sm text-foreground/75">(82) 99618-0034</p>
           </div>
           <div>
             <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
               <MapPin className="h-4 w-4" /> Endereço
             </h5>
-            <p className="mt-2 text-sm text-foreground/75">Endereço da instituição</p>
+            <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+              Sítio Hùndésô - S/N - Comunidade Riacho Branco, Região Serrana dos Quilombos, zona rural — Joaquim Gomes/AL. CEP: 57980-000.
+            </p>
           </div>
           <div>
             <h5 className="text-xs font-bold uppercase tracking-wider text-brand-earth">Conecte-se</h5>
@@ -110,8 +122,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-brand-earth/15 pt-6 text-center text-xs text-foreground/60 space-y-1">
-          <div>CNPJ: 00.000.000/0001-00 — Família Hùndésô</div>
-          <div>© {new Date().getFullYear()} Família Hùndésô. Todos os direitos reservados.</div>
+          <div>CNPJ: 05.786.767/0001-01 — Família Hùndésô</div>
+          <div>© 2026 Família Hùndésô. Todos os direitos reservados.</div>
         </div>
       </div>
     </footer>

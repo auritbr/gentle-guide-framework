@@ -10,14 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransparenciaRouteImport } from './routes/transparencia'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as NossoCultoRouteImport } from './routes/nosso-culto'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
@@ -37,6 +41,11 @@ const TransparenciaRoute = TransparenciaRouteImport.update({
   path: '/transparencia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuemSomosRoute = QuemSomosRouteImport.update({
   id: '/quem-somos',
   path: '/quem-somos',
@@ -45,6 +54,16 @@ const QuemSomosRoute = QuemSomosRouteImport.update({
 const ProjetosRoute = ProjetosRouteImport.update({
   id: '/projetos',
   path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
@@ -75,6 +94,11 @@ const EquipeRoute = EquipeRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
+  id: '/calendario-liturgico',
+  path: '/calendario-liturgico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -147,14 +171,18 @@ const ComoAjudarDoacaoFinanceiraRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
   '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos': typeof ProjetosRouteWithChildren
   '/quem-somos': typeof QuemSomosRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/transparencia': typeof TransparenciaRoute
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
   '/como-ajudar/doacao-itens': typeof ComoAjudarDoacaoItensRoute
@@ -171,12 +199,16 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
   '/nosso-culto': typeof NossoCultoRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/transparencia': typeof TransparenciaRoute
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
   '/como-ajudar/doacao-itens': typeof ComoAjudarDoacaoItensRoute
@@ -194,14 +226,18 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/galeria': typeof GaleriaRoute
   '/nosso-culto': typeof NossoCultoRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/projetos': typeof ProjetosRouteWithChildren
   '/quem-somos': typeof QuemSomosRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/transparencia': typeof TransparenciaRoute
   '/como-ajudar/doacao-financeira': typeof ComoAjudarDoacaoFinanceiraRoute
   '/como-ajudar/doacao-itens': typeof ComoAjudarDoacaoItensRoute
@@ -220,14 +256,18 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/calendario-liturgico'
     | '/contato'
     | '/equipe'
     | '/galeria'
     | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidade'
     | '/projetos'
     | '/quem-somos'
+    | '/termos-de-uso'
     | '/transparencia'
     | '/como-ajudar/doacao-financeira'
     | '/como-ajudar/doacao-itens'
@@ -244,12 +284,16 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/calendario-liturgico'
     | '/contato'
     | '/equipe'
     | '/galeria'
     | '/nosso-culto'
     | '/o-que-fazemos'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidade'
     | '/quem-somos'
+    | '/termos-de-uso'
     | '/transparencia'
     | '/como-ajudar/doacao-financeira'
     | '/como-ajudar/doacao-itens'
@@ -266,14 +310,18 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/calendario-liturgico'
     | '/contato'
     | '/equipe'
     | '/galeria'
     | '/nosso-culto'
     | '/noticias'
     | '/o-que-fazemos'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidade'
     | '/projetos'
     | '/quem-somos'
+    | '/termos-de-uso'
     | '/transparencia'
     | '/como-ajudar/doacao-financeira'
     | '/como-ajudar/doacao-itens'
@@ -291,14 +339,18 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   ContatoRoute: typeof ContatoRoute
   EquipeRoute: typeof EquipeRoute
   GaleriaRoute: typeof GaleriaRoute
   NossoCultoRoute: typeof NossoCultoRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
   OQueFazemosRoute: typeof OQueFazemosRoute
+  PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   ProjetosRoute: typeof ProjetosRouteWithChildren
   QuemSomosRoute: typeof QuemSomosRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
   TransparenciaRoute: typeof TransparenciaRoute
   ComoAjudarDoacaoFinanceiraRoute: typeof ComoAjudarDoacaoFinanceiraRoute
   ComoAjudarDoacaoItensRoute: typeof ComoAjudarDoacaoItensRoute
@@ -316,6 +368,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TransparenciaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quem-somos': {
       id: '/quem-somos'
       path: '/quem-somos'
@@ -328,6 +387,20 @@ declare module '@tanstack/react-router' {
       path: '/projetos'
       fullPath: '/projetos'
       preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-que-fazemos': {
@@ -370,6 +443,13 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendario-liturgico': {
+      id: '/calendario-liturgico'
+      path: '/calendario-liturgico'
+      fullPath: '/calendario-liturgico'
+      preLoaderRoute: typeof CalendarioLiturgicoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -502,14 +582,18 @@ const ProjetosRouteWithChildren = ProjetosRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   ContatoRoute: ContatoRoute,
   EquipeRoute: EquipeRoute,
   GaleriaRoute: GaleriaRoute,
   NossoCultoRoute: NossoCultoRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
   OQueFazemosRoute: OQueFazemosRoute,
+  PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   ProjetosRoute: ProjetosRouteWithChildren,
   QuemSomosRoute: QuemSomosRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
   TransparenciaRoute: TransparenciaRoute,
   ComoAjudarDoacaoFinanceiraRoute: ComoAjudarDoacaoFinanceiraRoute,
   ComoAjudarDoacaoItensRoute: ComoAjudarDoacaoItensRoute,
