@@ -149,19 +149,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
-    cardGrupos: [
-      {
-        titulo: "Destaques",
-        cards: [
-          { titulo: "Memória" },
-          { titulo: "Ancestralidade" },
-          { titulo: "Cultura afro-indígena" },
-          { titulo: "Cidadania ativa" },
-          { titulo: "Ponto de Cultura Rural" },
-          { titulo: "Política Nacional de Cultura Viva" },
-        ],
-      },
-    ],
+    galeria: [IMAGES.workshop, IMAGES.culture, IMAGES.dance, IMAGES.drums, IMAGES.ceremony, IMAGES.group],
   },
   {
     slug: "sopao-solidario",
@@ -183,18 +171,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
-    cardGrupos: [
-      {
-        titulo: "Destaques",
-        cards: [
-          { titulo: "Alimentação" },
-          { titulo: "Partilha" },
-          { titulo: "Acolhimento" },
-          { titulo: "Fortalecimento comunitário" },
-          { titulo: "Dignidade humana" },
-        ],
-      },
-    ],
+    galeria: [IMAGES.community, IMAGES.hands, IMAGES.group, IMAGES.children, IMAGES.workshop, IMAGES.elder],
   },
   {
     slug: "juridico",
