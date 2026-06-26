@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
+import { Route as ComoAjudarRouteImport } from './routes/como-ajudar'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TransparenciaRoute = TransparenciaRouteImport.update({
@@ -29,6 +30,11 @@ const OQueFazemosRoute = OQueFazemosRouteImport.update({
   path: '/o-que-fazemos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoAjudarRoute = ComoAjudarRouteImport.update({
+  id: '/como-ajudar',
+  path: '/como-ajudar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-ajudar': typeof ComoAjudarRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-ajudar': typeof ComoAjudarRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
@@ -50,20 +58,33 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-ajudar': typeof ComoAjudarRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/quem-somos': typeof QuemSomosRoute
   '/transparencia': typeof TransparenciaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/o-que-fazemos' | '/quem-somos' | '/transparencia'
+  fullPaths:
+    | '/'
+    | '/como-ajudar'
+    | '/o-que-fazemos'
+    | '/quem-somos'
+    | '/transparencia'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/o-que-fazemos' | '/quem-somos' | '/transparencia'
-  id: '__root__' | '/' | '/o-que-fazemos' | '/quem-somos' | '/transparencia'
+  to: '/' | '/como-ajudar' | '/o-que-fazemos' | '/quem-somos' | '/transparencia'
+  id:
+    | '__root__'
+    | '/'
+    | '/como-ajudar'
+    | '/o-que-fazemos'
+    | '/quem-somos'
+    | '/transparencia'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoAjudarRoute: typeof ComoAjudarRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
   QuemSomosRoute: typeof QuemSomosRoute
   TransparenciaRoute: typeof TransparenciaRoute
@@ -92,6 +113,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OQueFazemosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-ajudar': {
+      id: '/como-ajudar'
+      path: '/como-ajudar'
+      fullPath: '/como-ajudar'
+      preLoaderRoute: typeof ComoAjudarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +132,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoAjudarRoute: ComoAjudarRoute,
   OQueFazemosRoute: OQueFazemosRoute,
   QuemSomosRoute: QuemSomosRoute,
   TransparenciaRoute: TransparenciaRoute,
