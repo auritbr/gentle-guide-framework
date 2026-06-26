@@ -22,6 +22,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ComoAjudarIndexRouteImport } from './routes/como-ajudar.index'
+import { Route as ProjetosPresidenteRouteImport } from './routes/projetos.presidente'
 import { Route as ProjetosLgbtqiaRouteImport } from './routes/projetos.lgbtqia'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
@@ -95,6 +96,11 @@ const ComoAjudarIndexRoute = ComoAjudarIndexRouteImport.update({
   path: '/como-ajudar/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetosPresidenteRoute = ProjetosPresidenteRouteImport.update({
+  id: '/presidente',
+  path: '/presidente',
+  getParentRoute: () => ProjetosRoute,
+} as any)
 const ProjetosLgbtqiaRoute = ProjetosLgbtqiaRouteImport.update({
   id: '/lgbtqia',
   path: '/lgbtqia',
@@ -151,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByTo {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar': typeof ComoAjudarIndexRoute
   '/noticias': typeof NoticiasIndexRoute
   '/projetos': typeof ProjetosIndexRoute
@@ -194,6 +202,7 @@ export interface FileRoutesById {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/projetos/lgbtqia': typeof ProjetosLgbtqiaRoute
+  '/projetos/presidente': typeof ProjetosPresidenteRoute
   '/como-ajudar/': typeof ComoAjudarIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/projetos/': typeof ProjetosIndexRoute
@@ -218,6 +227,7 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/projetos/lgbtqia'
+    | '/projetos/presidente'
     | '/como-ajudar/'
     | '/noticias/'
     | '/projetos/'
@@ -238,6 +248,7 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/projetos/lgbtqia'
+    | '/projetos/presidente'
     | '/como-ajudar'
     | '/noticias'
     | '/projetos'
@@ -260,6 +271,7 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/projetos/$slug'
     | '/projetos/lgbtqia'
+    | '/projetos/presidente'
     | '/como-ajudar/'
     | '/noticias/'
     | '/projetos/'
@@ -376,6 +388,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoAjudarIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projetos/presidente': {
+      id: '/projetos/presidente'
+      path: '/presidente'
+      fullPath: '/projetos/presidente'
+      preLoaderRoute: typeof ProjetosPresidenteRouteImport
+      parentRoute: typeof ProjetosRoute
+    }
     '/projetos/lgbtqia': {
       id: '/projetos/lgbtqia'
       path: '/lgbtqia'
@@ -445,12 +464,14 @@ const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(
 interface ProjetosRouteChildren {
   ProjetosSlugRoute: typeof ProjetosSlugRoute
   ProjetosLgbtqiaRoute: typeof ProjetosLgbtqiaRoute
+  ProjetosPresidenteRoute: typeof ProjetosPresidenteRoute
   ProjetosIndexRoute: typeof ProjetosIndexRoute
 }
 
 const ProjetosRouteChildren: ProjetosRouteChildren = {
   ProjetosSlugRoute: ProjetosSlugRoute,
   ProjetosLgbtqiaRoute: ProjetosLgbtqiaRoute,
+  ProjetosPresidenteRoute: ProjetosPresidenteRoute,
   ProjetosIndexRoute: ProjetosIndexRoute,
 }
 
