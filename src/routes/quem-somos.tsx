@@ -215,7 +215,7 @@ function QuemSomos() {
               <img
                 src={IMAGES.group}
                 alt="Comunidade reunida em ação cultural da Família Hùndésô"
-                className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl"
+                className="h-[320px] w-full rounded-3xl object-cover shadow-xl sm:h-[420px] lg:h-[480px] lg:max-h-[500px]"
               />
               <div className="absolute -bottom-6 -right-6 hidden max-w-[260px] rounded-2xl bg-gradient-gold p-6 shadow-xl md:block">
                 <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-dark/70">
@@ -291,18 +291,18 @@ function QuemSomos() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {DIRETRIZES.map((d) => {
               const Icon = d.icon;
               return (
                 <div
                   key={d.titulo}
-                  className="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md sm:p-6"
                 >
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-warm text-white">
-                    <Icon className="h-6 w-6" aria-hidden />
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-warm text-white">
+                    <Icon className="h-5 w-5" aria-hidden />
                   </div>
-                  <div className="mt-5 text-lg font-bold leading-snug text-brand-dark">
+                  <div className="text-base font-bold leading-snug text-brand-dark sm:text-[17px]">
                     {d.titulo}
                   </div>
                 </div>
@@ -339,7 +339,7 @@ function QuemSomos() {
             <img
               src={IMAGES.children}
               alt="Crianças e jovens em atividade cultural e de acolhimento"
-              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl"
+              className="h-[280px] w-full rounded-3xl object-cover shadow-xl sm:h-[380px] lg:h-[460px] lg:max-h-[480px]"
             />
           </div>
         </div>
@@ -463,7 +463,7 @@ function QuemSomos() {
                   key={f.titulo}
                   className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-lg"
                 >
-                  <div className="relative h-44 overflow-hidden sm:h-52 lg:h-56">
+                  <div className="relative h-44 overflow-hidden sm:h-48 lg:h-52">
                     <img
                       src={f.imagem}
                       alt={f.titulo}
@@ -473,11 +473,11 @@ function QuemSomos() {
                       <Icon className="h-4.5 w-4.5" aria-hidden />
                     </div>
                   </div>
-                  <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
-                    <h3 className="text-lg font-bold leading-snug text-brand-dark sm:text-xl">
+                  <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
+                    <h3 className="text-lg font-bold leading-snug text-brand-dark sm:text-[20px]">
                       {f.titulo}
                     </h3>
-                    <div className="space-y-3 text-[15px] leading-[1.65] text-foreground/80">
+                    <div className="space-y-2.5 text-[14.5px] leading-[1.6] text-foreground/80">
                       {f.texto.split("\n\n").map((p, idx) => (
                         <p key={idx}>{p}</p>
                       ))}
@@ -491,18 +491,18 @@ function QuemSomos() {
       </section>
 
       {/* 9.5 NOSSO CULTO — CARD */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <article className="group relative grid overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 lg:grid-cols-[1.1fr_1fr] lg:max-h-[420px]">
-            <div className="relative isolate flex flex-col justify-between gap-6 bg-[linear-gradient(135deg,#3A1D10_0%,#6B3F24_55%,#9A4A2F_100%)] p-7 text-white sm:p-9">
+      <section className="bg-white py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <article className="group relative grid overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 lg:grid-cols-[1.1fr_1fr] lg:max-h-[340px]">
+            <div className="relative isolate flex flex-col justify-between gap-5 bg-[linear-gradient(135deg,#3A1D10_0%,#6B3F24_55%,#9A4A2F_100%)] p-6 text-white sm:p-8 lg:p-10">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
                   <Flame className="h-3.5 w-3.5" aria-hidden /> Tradição e ancestralidade
                 </div>
-                <h2 className="mt-4 text-[26px] font-bold leading-tight sm:text-[30px] lg:text-[34px]">
+                <h2 className="mt-3 text-[24px] font-bold leading-tight sm:text-[28px] lg:text-[32px]">
                   Nosso culto
                 </h2>
-                <p className="mt-4 max-w-xl text-[15px] leading-[1.65] text-white/85 sm:text-[16px]">
+                <p className="mt-3 max-w-xl text-[14.5px] leading-[1.6] text-white/85 sm:text-[15.5px]">
                   Conheça as tradições, fundamentos e expressões espirituais
                   que orientam o Hùnkpámè Hùndésô como espaço de fé,
                   ancestralidade, resistência e preservação das matrizes
@@ -512,14 +512,14 @@ function QuemSomos() {
               <div>
                 <Link
                   to="/nosso-culto"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-brand-dark shadow-md transition hover:brightness-105 sm:text-sm"
+                  className="inline-flex h-11 items-center gap-2 rounded-full bg-brand-gold px-5 text-xs font-bold uppercase tracking-[0.08em] text-brand-dark shadow-md transition hover:brightness-105 sm:text-sm"
                 >
                   Saiba mais
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
                 </Link>
               </div>
             </div>
-            <div className="relative h-56 overflow-hidden sm:h-72 lg:h-full lg:min-h-[360px]">
+            <div className="relative h-48 overflow-hidden sm:h-60 lg:h-full lg:min-h-[300px]">
               <img
                 src={IMAGES.ceremony}
                 alt="Espaço sagrado da Família Hùndésô — tradição e ancestralidade"
@@ -532,27 +532,27 @@ function QuemSomos() {
       </section>
 
       {/* 10. CTA FINAL */}
-      <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
+      <section className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#9A4A2F_0%,#6B3F24_55%,#C9953B_100%)]" />
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-[28px] font-bold leading-tight text-white sm:text-[36px] lg:text-[44px]">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-[26px] font-bold leading-tight text-white sm:text-[32px] lg:text-[38px]">
             Fortalecer a Família Hùndésô é fortalecer memória, cultura e
             comunidade.
           </h2>
-          <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-[1.7] text-white/90 sm:text-[17px]">
+          <p className="mx-auto mt-4 max-w-[680px] text-[15px] leading-[1.65] text-white/90 sm:text-[16px]">
             Conheça nossos projetos, acompanhe nossas ações e apoie a
             continuidade desse trabalho.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               to="/projetos"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-brand-earth shadow-lg transition hover:brightness-105 sm:text-sm"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-white px-5 text-xs font-bold uppercase tracking-[0.08em] text-brand-earth shadow-lg transition hover:brightness-105 sm:text-sm"
             >
               Conhecer projetos
             </Link>
             <Link
               to="/como-ajudar"
-              className="inline-flex items-center justify-center rounded-full bg-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-lg ring-1 ring-white/20 transition hover:bg-black sm:text-sm"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-brand-dark px-5 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-lg ring-1 ring-white/20 transition hover:bg-black sm:text-sm"
             >
               Apoiar agora
             </Link>

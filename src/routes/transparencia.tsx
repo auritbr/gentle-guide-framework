@@ -29,7 +29,7 @@ function Transparencia() {
     <>
       <PageHero image={IMAGES.heroTransparency} eyebrow="Compromisso" title="" highlight="Transparência" subtitle="Documentos, relatórios e registros institucionais à disposição da comunidade."/>
 
-      <section className="py-24 bg-brand-cream">
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2">
           <div>
             <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Nosso jeito de fazer</div>
@@ -42,7 +42,7 @@ function Transparencia() {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark">Documentos e Relatórios</h2>
           <div className="mt-8 space-y-3">

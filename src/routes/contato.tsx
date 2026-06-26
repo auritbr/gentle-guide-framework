@@ -18,7 +18,7 @@ function Contato() {
     <>
       <PageHero image={IMAGES.heroContact} eyebrow="Contato" title="Fale" highlight="conosco" subtitle="Estamos abertos ao diálogo com a comunidade, parceiros e apoiadores."/>
 
-      <section className="py-24 bg-brand-cream">
+      <section className="py-16 sm:py-20 bg-brand-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2">
           <div className="space-y-6">
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark">Informações</h2>
