@@ -341,6 +341,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.hands, IMAGES.community, IMAGES.group, IMAGES.children, IMAGES.workshop, IMAGES.elder],
   },
   {
     slug: "comunidade-riacho-branco",
