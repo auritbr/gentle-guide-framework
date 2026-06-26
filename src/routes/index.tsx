@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Coins, Package, Apple } from "lucide-react";
-import { IMAGES, AREAS, PROJETOS, NOTICIAS } from "@/data/site";
+import { IMAGES, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
 
@@ -94,34 +94,27 @@ function Index() {
         </div>
       </section>
 
-      {/* O que fazemos */}
-      <section className="py-16 sm:py-20 bg-brand-cream">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Atuação</div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">O que fazemos</h2>
-            <p className="mt-4 text-lg text-foreground/70">Atuamos em frentes que dialogam entre si: cultura, memória, educação, religiosidade e ação social.</p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {AREAS.map((a) => (
-              <article key={a.titulo} className="group overflow-hidden rounded-3xl bg-white shadow-md hover:shadow-2xl transition-all">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={a.imagem} alt={a.titulo} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl font-bold text-brand-dark">{a.titulo}</h3>
-                  <p className="mt-2 text-sm text-foreground/70 leading-relaxed">{a.texto}</p>
-                  <Link to="/o-que-fazemos" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-earth hover:text-brand-red">
-                    Saiba mais <ArrowRight className="h-3.5 w-3.5"/>
-                  </Link>
-                </div>
-              </article>
-            ))}
+      {/* O que fazemos (compacta) */}
+      <section className="py-12 sm:py-14 bg-brand-cream">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-start gap-6 rounded-3xl bg-white p-7 sm:p-9 shadow-sm ring-1 ring-brand-earth/10 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-brand-earth font-semibold">O que fazemos</div>
+              <h2 className="mt-2 font-display text-2xl sm:text-3xl font-bold text-brand-dark text-balance">
+                Projetos que fortalecem cultura, memória e comunidade
+              </h2>
+              <p className="mt-2 text-[15px] text-foreground/70 leading-relaxed">
+                A Família Hùndésô atua por meio de projetos sociais, culturais, educativos, comunitários e de incidência política, promovendo cidadania, ancestralidade, cuidado e fortalecimento das comunidades atendidas.
+              </p>
+            </div>
+            <Link to="/projetos" className="shrink-0 inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-bold text-white hover:bg-brand-earth transition">
+              Conhecer projetos <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Projetos */}
+      {/* Projetos e iniciativas */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
@@ -129,12 +122,31 @@ function Index() {
               <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Em destaque</div>
               <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-brand-dark text-balance">Projetos e iniciativas</h2>
             </div>
-            <Link to="/o-que-fazemos" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-earth hover:text-brand-red">
+            <Link to="/projetos" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-earth hover:text-brand-red">
               Ver todos <ArrowRight className="h-4 w-4"/>
             </Link>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PROJETOS.map((p) => (
+            {[
+              {
+                titulo: "LGBTQIA+",
+                descricao: "A criação do grupo ajudou a consolidar as bases para o avanço de políticas públicas afirmativas, abrindo caminhos para as gerações seguintes de ativistas em Alagoas.",
+                imagem: IMAGES.hands,
+                to: "/projetos/lgbtqia" as const,
+              },
+              {
+                titulo: "Página do Presidente",
+                descricao: "O histórico completo de atuação e a trajetória do líder cultural e religioso Doté Elias destacam o seu papel central na preservação das tradições de matriz africana, na cultura popular e no ativismo social no estado de Alagoas.",
+                imagem: IMAGES.elder,
+                to: "/projetos/presidente" as const,
+              },
+              {
+                titulo: "Maracatu",
+                descricao: "O Maracatu Nação Acorte de Alagoas é um dos principais símbolos contemporâneos de resistência e salvaguarda da cultura afro-alagoana.",
+                imagem: IMAGES.drums,
+                to: "/projetos/maracatu" as const,
+              },
+            ].map((p) => (
               <article key={p.titulo} className="group relative overflow-hidden rounded-3xl">
                 <div className="aspect-[4/5]">
                   <img src={p.imagem} alt={p.titulo} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"/>
@@ -143,9 +155,12 @@ function Index() {
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <h3 className="font-display text-2xl font-bold text-white">{p.titulo}</h3>
                   <p className="mt-2 text-sm text-white/85 leading-relaxed">{p.descricao}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-xs font-semibold text-white hover:bg-brand-gold hover:text-brand-dark transition">
+                  <Link
+                    to={p.to}
+                    className="mt-4 inline-flex items-center gap-1 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-xs font-semibold text-white hover:bg-brand-gold hover:text-brand-dark transition"
+                  >
                     Saiba mais <ArrowRight className="h-3 w-3"/>
-                  </button>
+                  </Link>
                 </div>
               </article>
             ))}
