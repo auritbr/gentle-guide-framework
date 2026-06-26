@@ -118,9 +118,9 @@ function RootShell({ children }: { children: ReactNode }) {
           https://vlibras.gov.br/app/vlibras-plugin.js encontrar o
           markup `<div vw>` e renderizar o tradutor de Libras.
         */}
-        <div vw="true" className="enabled">
-          <div vw-access-button="true" className="active"></div>
-          <div vw-plugin-wrapper="true">
+        <div {...({ vw: "true" } as any)} className="enabled">
+          <div {...({ "vw-access-button": "true" } as any)} className="active"></div>
+          <div {...({ "vw-plugin-wrapper": "true" } as any)}>
             <div className="vw-plugin-top-wrapper"></div>
           </div>
         </div>
