@@ -413,6 +413,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.elder, IMAGES.community, IMAGES.culture, IMAGES.ceremony, IMAGES.group, IMAGES.dance],
   },
   {
     slug: "rota-dos-voduns",
@@ -466,6 +467,7 @@ export const PROJETOS_LISTA: ProjetoDetalhe[] = [
         ],
       },
     ],
+    galeria: [IMAGES.ceremony, IMAGES.culture, IMAGES.drums, IMAGES.dance, IMAGES.elder, IMAGES.group],
   },
 ];
 
