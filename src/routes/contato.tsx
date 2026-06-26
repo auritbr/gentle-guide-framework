@@ -19,13 +19,13 @@ function Contato() {
       <PageHero image={IMAGES.heroContact} eyebrow="Contato" title="Fale" highlight="conosco" subtitle="Estamos abertos ao diálogo com a comunidade, parceiros e apoiadores."/>
 
       <section className="py-16 sm:py-20 bg-brand-cream">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2 lg:items-start">
           <div className="space-y-6">
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark">Informações</h2>
             <div className="space-y-5">
               {[
-                {i:MapPin,t:"Endereço",d:"— endereço institucional —"},
-                {i:Phone,t:"WhatsApp",d:"— a preencher —"},
+                {i:MapPin,t:"Matriz Hunkpame Hundeso",d:"Sítio Hùndésô - S/N - Comunidade Riacho Branco, Região Serrana dos Quilombos, zona rural - Joaquim Gomes/AL. CEP: 57980-000."},
+                {i:Phone,t:"Fone",d:"(82) 99618-0034"},
                 {i:Mail,t:"E-mail",d:"contato@familiahundeso.org.br"},
               ].map(({i:Icon,t,d}) => (
                 <div key={t} className="flex gap-4 rounded-2xl bg-white p-5 shadow-sm">
@@ -34,7 +34,7 @@ function Contato() {
                   </div>
                   <div>
                     <div className="font-display font-bold text-brand-dark">{t}</div>
-                    <div className="text-sm text-foreground/70">{d}</div>
+                    <div className="text-sm text-foreground/70 leading-relaxed">{d}</div>
                   </div>
                 </div>
               ))}
@@ -49,8 +49,15 @@ function Contato() {
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-brand-dark/10 grid place-items-center text-foreground/40 text-sm">
-              Espaço reservado para mapa incorporado
+            <div className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-brand-earth/10">
+              <iframe
+                title="Localização — Matriz Hunkpame Hundeso"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.8403321381343!2d-35.75860722608461!3d-9.051201791011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x700cf461fa4a9e5%3A0x92059b4106599bf0!2zSMO5bmtww6Btw6kgQXnDs27DsyBIw7luZMOpc8O0!5e1!3m2!1spt-BR!2sbr!4v1782510591694!5m2!1spt-BR!2sbr"
+                className="w-full h-[300px] sm:h-[360px] lg:h-[420px] border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
             </div>
           </div>
 
