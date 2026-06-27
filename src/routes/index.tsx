@@ -245,7 +245,7 @@ function Index() {
       <CalendarPreview />
 
       {/* CTA Final */}
-      <section className="py-14 sm:py-20 bg-gradient-to-br from-brand-dark via-brand-earth to-brand-gold text-white">
+      <section className="py-14 sm:py-20 bg-gradient-to-br from-brand-dark via-brand-earth to-brand-dark text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-balance leading-tight">
             Fortaleça a memória, a cultura e a comunidade
