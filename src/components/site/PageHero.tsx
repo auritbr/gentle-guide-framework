@@ -18,7 +18,7 @@ export function PageHero({
   return (
     <section className="relative isolate flex min-h-[48vh] lg:min-h-[58vh] items-end overflow-hidden pt-20">
       <img src={image} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-brand-dark/40" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/45 to-black/20" />
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {eyebrow && (
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-brand-gold backdrop-blur">
