@@ -38,7 +38,7 @@ export function HeroCarousel() {
             <div key={i} className="relative min-w-0 flex-[0_0_100%]">
               <div className="relative h-[78vh] min-h-[520px] w-full">
                 <img src={s.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/85 via-brand-dark/60 to-brand-dark/30" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/15" />
                 <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28">
                   <div className="max-w-3xl">
                     {s.eyebrow && (
