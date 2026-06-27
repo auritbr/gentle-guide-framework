@@ -81,25 +81,25 @@ html {
   --card-foreground: oklch(0.18 0.02 60);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 60);
-  --primary: #00A8FF;
-  --primary-foreground: #FFFFFF;
-  --secondary: #7A4900;
-  --secondary-foreground: #FFFFFF;
+  --primary: oklch(0.72 0.13 75);
+  --primary-foreground: oklch(0.15 0.02 60);
+  --secondary: oklch(0.42 0.09 50);
+  --secondary-foreground: oklch(0.98 0.01 80);
   --muted: oklch(0.94 0.015 75);
   --muted-foreground: oklch(0.45 0.03 60);
-  --accent: #00A8FF;
-  --accent-foreground: #FFFFFF;
-  --destructive: #E31919;
-  --destructive-foreground: #FFFFFF;
+  --accent: oklch(0.5 0.13 145);
+  --accent-foreground: oklch(0.98 0.01 80);
+  --destructive: oklch(0.5 0.18 25);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.88 0.02 75);
   --input: oklch(0.88 0.02 75);
-  --ring: #00A8FF;
-  --brand-dark: #2A1800;
+  --ring: oklch(0.72 0.13 75);
+  --brand-dark: oklch(0.18 0.015 60);
   --brand-cream: oklch(0.96 0.02 80);
-  --brand-earth: #7A4900;
-  --brand-gold: #00A8FF;
-  --brand-green: #00A8FF;
-  --brand-red: #E31919;
+  --brand-earth: oklch(0.42 0.09 50);
+  --brand-gold: oklch(0.72 0.13 75);
+  --brand-green: oklch(0.5 0.13 145);
+  --brand-red: oklch(0.48 0.15 30);
   --font-display: "Poppins", "Inter", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --chart-1: oklch(0.646 0.222 41.116);
@@ -174,7 +174,7 @@ html {
 }
 
 @utility bg-gradient-warm {
-  background-image: linear-gradient(135deg, #00A8FF, #0088D6);
+  background-image: linear-gradient(135deg, var(--brand-earth), var(--brand-red) 50%, var(--brand-gold));
 }
 
 @utility bg-gradient-earth {
@@ -182,11 +182,11 @@ html {
 }
 
 @utility bg-gradient-gold {
-  background-image: linear-gradient(135deg, #00A8FF, #0088D6);
+  background-image: linear-gradient(135deg, var(--brand-gold), var(--brand-red));
 }
 
 @utility highlight-stripe {
-  background-image: linear-gradient(120deg, var(--brand-earth) 0%, #4A2C00 100%);
+  background-image: linear-gradient(120deg, var(--brand-gold) 0%, var(--brand-red) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
