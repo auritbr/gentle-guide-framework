@@ -63,49 +63,49 @@ function DoacaoFinanceira() {
             <p className="mt-3 text-foreground/70">Selecione um valor sugerido ou informe outro.</p>
           </div>
 
-          <div className="mt-10 rounded-3xl bg-brand-cream/60 p-6 sm:p-10 ring-1 ring-black/5 shadow-sm">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mt-8 rounded-2xl bg-brand-cream/60 p-5 sm:p-7 ring-1 ring-black/5 shadow-sm">
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
               {VALORES.map((v) => (
                 <button
                   key={v}
                   onClick={() => { setValor(v); setOutro(""); }}
-                  className={`rounded-2xl px-4 py-5 text-lg font-bold transition ring-1 ${valor === v && !outro ? "bg-brand-dark text-white ring-brand-dark shadow-lg" : "bg-white text-brand-dark ring-black/10 hover:ring-brand-gold"}`}
+                  className={`rounded-xl px-3 py-3 text-base font-bold transition ring-1 ${valor === v && !outro ? "bg-brand-dark text-white ring-brand-dark shadow-md" : "bg-white text-brand-dark ring-black/10 hover:ring-brand-gold"}`}
                 >
                   R$ {v.toLocaleString("pt-BR")}
                 </button>
               ))}
             </div>
 
-            <div className="mt-6">
-              <label className="block text-sm font-semibold text-brand-dark mb-2">Outro valor</label>
+            <div className="mt-4">
+              <label className="block text-sm font-semibold text-brand-dark mb-1.5">Outro valor</label>
               <input
                 type="number"
                 value={outro}
                 onChange={(e) => { setOutro(e.target.value); setValor(""); }}
                 placeholder="R$ 0,00"
-                className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-base focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30"
+                className="w-full rounded-lg border border-black/10 bg-white px-3.5 py-2.5 text-sm focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30"
               />
             </div>
 
-            <div className="mt-6">
-              <label className="block text-sm font-semibold text-brand-dark mb-2">Comentário ou mensagem para a instituição</label>
+            <div className="mt-4">
+              <label className="block text-sm font-semibold text-brand-dark mb-1.5">Comentário ou mensagem para a instituição</label>
               <textarea
                 value={msg}
                 onChange={(e) => setMsg(e.target.value)}
-                rows={3}
+                rows={2}
                 placeholder="Deixe uma mensagem (opcional)"
-                className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-base focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30"
+                className="w-full rounded-lg border border-black/10 bg-white px-3.5 py-2.5 text-sm focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30"
               />
             </div>
 
-            <div className="mt-6">
-              <label className="block text-sm font-semibold text-brand-dark mb-3">Frequência</label>
+            <div className="mt-4">
+              <label className="block text-sm font-semibold text-brand-dark mb-2">Frequência</label>
               <div className="grid gap-2 sm:grid-cols-3">
                 {FREQS.map((f) => (
                   <button
                     key={f}
                     onClick={() => setFreq(f)}
-                    className={`rounded-xl px-4 py-3 text-sm font-semibold transition ring-1 ${freq === f ? "bg-brand-earth text-white ring-brand-earth" : "bg-white text-brand-dark ring-black/10 hover:ring-brand-earth"}`}
+                    className={`rounded-lg px-3 py-2.5 text-sm font-semibold transition ring-1 ${freq === f ? "bg-brand-earth text-white ring-brand-earth" : "bg-white text-brand-dark ring-black/10 hover:ring-brand-earth"}`}
                   >
                     {f}
                   </button>
@@ -115,9 +115,9 @@ function DoacaoFinanceira() {
 
             <button
               type="button"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7A4900] px-8 py-4 text-base font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#5C3600] transition-colors"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7A4900] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#5C3600] transition-colors"
             >
-              <Heart className="h-5 w-5" /> Continuar doação
+              <Heart className="h-4 w-4" /> Continuar doação
             </button>
           </div>
         </div>
