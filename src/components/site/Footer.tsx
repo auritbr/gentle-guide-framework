@@ -51,7 +51,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#F7F2E9] text-brand-dark border-t border-brand-earth/10">
+    <footer className="bg-brand-dark text-white border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
@@ -59,18 +59,18 @@ export function Footer() {
               <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-gold text-brand-dark font-display font-bold">FH</div>
               <div className="font-display text-lg font-bold">Família Hùndésô</div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-foreground/70">
+            <p className="mt-4 text-sm leading-relaxed text-white/70">
               Tradição, cultura, ancestralidade e comunidade.
             </p>
           </div>
 
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-brand-dark">{col.title}</h4>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-brand-gold">{col.title}</h4>
               <ul className="mt-4 space-y-2.5 text-sm">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.to} className="text-foreground/70 hover:text-brand-earth transition-colors">
+                    <a href={l.to} className="text-white/75 hover:text-brand-gold transition-colors">
                       {l.label}
                     </a>
                   </li>
@@ -80,26 +80,26 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="my-12 h-px bg-brand-earth/15" />
+        <div className="my-12 h-px bg-white/15" />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
               <Mail className="h-4 w-4" /> E-mail
             </h5>
-            <p className="mt-2 text-sm text-foreground/75 break-words">contato@familiahundeso.org.br</p>
+            <p className="mt-2 text-sm text-white/80 break-words">contato@familiahundeso.org.br</p>
           </div>
           <div>
             <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
               <Phone className="h-4 w-4" /> Telefone / WhatsApp
             </h5>
-            <p className="mt-2 text-sm text-foreground/75">(82) 99618-0034</p>
+            <p className="mt-2 text-sm text-white/80">(82) 99618-0034</p>
           </div>
           <div>
             <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
               <MapPin className="h-4 w-4" /> Endereço
             </h5>
-            <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+            <p className="mt-2 text-sm text-white/80 leading-relaxed">
               Sítio Hùndésô - S/N - Comunidade Riacho Branco, Região Serrana dos Quilombos, zona rural — Joaquim Gomes/AL. CEP: 57980-000.
             </p>
           </div>
@@ -113,7 +113,7 @@ export function Footer() {
                 { icon: Linkedin, label: "LinkedIn", href: "#" },
                 { icon: MessageCircle, label: "WhatsApp", href: "#" },
               ].map(({ icon: Icon, label, href }) => (
-                <a key={label} href={href} aria-label={label} className="grid h-9 w-9 place-items-center rounded-full bg-white text-brand-dark ring-1 ring-brand-earth/15 hover:bg-brand-gold hover:text-brand-dark transition">
+                <a key={label} href={href} aria-label={label} className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 hover:bg-brand-gold hover:text-white transition">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
@@ -121,7 +121,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-brand-earth/15 pt-6 text-center text-xs text-foreground/60 space-y-1">
+        <div className="mt-12 border-t border-white/15 pt-6 text-center text-xs text-white/60 space-y-1">
           <div>CNPJ: 05.786.767/0001-01 — Família Hùndésô</div>
           <div>© 2026 Família Hùndésô. Todos os direitos reservados.</div>
         </div>
