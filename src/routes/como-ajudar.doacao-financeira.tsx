@@ -115,7 +115,7 @@ function DoacaoFinanceira() {
 
             <button
               type="button"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-warm px-8 py-4 text-base font-bold uppercase tracking-wider text-white shadow-lg hover:brightness-110 transition"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7A4900] px-8 py-4 text-base font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#5C3600] transition-colors"
             >
               <Heart className="h-5 w-5" /> Continuar doação
             </button>
@@ -151,7 +151,7 @@ function DoacaoFinanceira() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PORQUE.map((p) => (
               <div key={p.titulo} className="text-center">
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-gradient-warm text-white shadow-md">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand-cream text-[#7A4900] ring-1 ring-[#7A4900]/15 shadow-sm">
                   <p.icon className="h-7 w-7" />
                 </div>
                 <p className="mt-4 font-display text-lg font-semibold text-brand-dark leading-snug">{p.titulo}</p>
