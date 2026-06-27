@@ -81,25 +81,26 @@ html {
   --card-foreground: oklch(0.18 0.02 60);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 60);
-  --primary: oklch(0.72 0.13 75);
-  --primary-foreground: oklch(0.15 0.02 60);
-  --secondary: oklch(0.42 0.09 50);
-  --secondary-foreground: oklch(0.98 0.01 80);
-  --muted: oklch(0.94 0.015 75);
-  --muted-foreground: oklch(0.45 0.03 60);
-  --accent: oklch(0.5 0.13 145);
-  --accent-foreground: oklch(0.98 0.01 80);
-  --destructive: oklch(0.5 0.18 25);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.88 0.02 75);
-  --input: oklch(0.88 0.02 75);
-  --ring: oklch(0.72 0.13 75);
-  --brand-dark: oklch(0.18 0.015 60);
-  --brand-cream: oklch(0.96 0.02 80);
-  --brand-earth: oklch(0.42 0.09 50);
-  --brand-gold: oklch(0.72 0.13 75);
-  --brand-green: oklch(0.5 0.13 145);
-  --brand-red: oklch(0.48 0.15 30);
+  /* Paleta oficial: azul #00A8FF, marrom #7A4900, vermelho #E31919, branco */
+  --primary: oklch(0.70 0.17 235);          /* azul #00A8FF — ações */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.40 0.09 65);         /* marrom #7A4900 — institucional */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.95 0.01 70);
+  --muted-foreground: oklch(0.40 0.04 65);
+  --accent: oklch(0.58 0.22 27);            /* vermelho #E31919 — destaque */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.88 0.015 70);
+  --input: oklch(0.88 0.015 70);
+  --ring: oklch(0.70 0.17 235);
+  --brand-dark: oklch(0.22 0.04 65);        /* marrom muito escuro p/ header/footer */
+  --brand-cream: oklch(0.97 0.008 80);      /* off-white para leitura */
+  --brand-earth: oklch(0.40 0.09 65);       /* marrom oficial #7A4900 */
+  --brand-gold: oklch(0.70 0.17 235);       /* remapeado p/ azul #00A8FF */
+  --brand-green: oklch(0.40 0.09 65);       /* remapeado p/ marrom (uso institucional) */
+  --brand-red: oklch(0.58 0.22 27);         /* vermelho oficial #E31919 */
   --font-display: "Poppins", "Inter", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --chart-1: oklch(0.646 0.222 41.116);
@@ -174,19 +175,22 @@ html {
 }
 
 @utility bg-gradient-warm {
-  background-image: linear-gradient(135deg, var(--brand-earth), var(--brand-red) 50%, var(--brand-gold));
+  /* CTA principal — azul institucional com leve profundidade */
+  background-image: linear-gradient(135deg, var(--brand-gold), oklch(0.55 0.17 240));
 }
 
 @utility bg-gradient-earth {
+  /* Seções institucionais — marrom profundo */
   background-image: linear-gradient(135deg, var(--brand-dark), var(--brand-earth));
 }
 
 @utility bg-gradient-gold {
-  background-image: linear-gradient(135deg, var(--brand-gold), var(--brand-red));
+  /* Selo/decoração — azul → marrom para sobriedade */
+  background-image: linear-gradient(135deg, var(--brand-gold), var(--brand-earth));
 }
 
 @utility highlight-stripe {
-  background-image: linear-gradient(120deg, var(--brand-gold) 0%, var(--brand-red) 100%);
+  background-image: linear-gradient(120deg, var(--brand-gold) 0%, var(--brand-earth) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
