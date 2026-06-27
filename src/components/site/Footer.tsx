@@ -51,12 +51,12 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white border-t border-white/10">
+    <footer className="bg-brand-earth text-white border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-full bg-brand-earth text-white font-display font-bold">FH</div>
+            <div className="grid h-12 w-12 place-items-center rounded-full bg-white/10 ring-1 ring-white/20 text-white font-display font-bold">FH</div>
               <div className="font-display text-lg font-bold">Família Hùndésô</div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
@@ -66,11 +66,11 @@ export function Footer() {
 
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-brand-gold">{col.title}</h4>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-brand-cream">{col.title}</h4>
               <ul className="mt-4 space-y-2.5 text-sm">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.to} className="text-white/75 hover:text-brand-gold transition-colors">
+                    <a href={l.to} className="text-white/80 hover:text-white transition-colors">
                       {l.label}
                     </a>
                   </li>
@@ -84,19 +84,19 @@ export function Footer() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-cream">
               <Mail className="h-4 w-4" /> E-mail
             </h5>
             <p className="mt-2 text-sm text-white/80 break-words">contato@familiahundeso.org.br</p>
           </div>
           <div>
-            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-cream">
               <Phone className="h-4 w-4" /> Telefone / WhatsApp
             </h5>
             <p className="mt-2 text-sm text-white/80">(82) 99618-0034</p>
           </div>
           <div>
-            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-cream">
               <MapPin className="h-4 w-4" /> Endereço
             </h5>
             <p className="mt-2 text-sm text-white/80 leading-relaxed">
@@ -104,7 +104,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h5 className="text-xs font-bold uppercase tracking-wider text-brand-gold">Conecte-se</h5>
+            <h5 className="text-xs font-bold uppercase tracking-wider text-brand-cream">Conecte-se</h5>
             <div className="mt-3 flex flex-wrap gap-2">
               {[
                 { icon: Instagram, label: "Instagram", href: "#" },
@@ -113,7 +113,7 @@ export function Footer() {
                 { icon: Linkedin, label: "LinkedIn", href: "#" },
                 { icon: MessageCircle, label: "WhatsApp", href: "#" },
               ].map(({ icon: Icon, label, href }) => (
-                <a key={label} href={href} aria-label={label} className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 hover:bg-brand-gold hover:text-white transition">
+                <a key={label} href={href} aria-label={label} className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 hover:bg-white hover:text-brand-earth transition">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
