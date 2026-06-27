@@ -45,7 +45,7 @@ function Index() {
       {/* Impacto */}
       <section className="relative isolate py-20 overflow-hidden">
         <img src={IMAGES.community} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover"/>
-        <div className="absolute inset-0 -z-10 bg-brand-dark/80"/>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/55 to-black/65"/>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mx-auto max-w-3xl font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-balance leading-tight">
             Cultura, memória e <span className="highlight-stripe">transformação social</span>
