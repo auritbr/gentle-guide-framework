@@ -174,7 +174,7 @@ html {
 }
 
 @utility bg-gradient-warm {
-  background-image: linear-gradient(135deg, var(--brand-earth), #00A8FF 60%, #0077CC);
+  background-image: linear-gradient(135deg, #00A8FF, #0088D6);
 }
 
 @utility bg-gradient-earth {
@@ -182,11 +182,11 @@ html {
 }
 
 @utility bg-gradient-gold {
-  background-image: linear-gradient(135deg, #00A8FF, #0077CC);
+  background-image: linear-gradient(135deg, #00A8FF, #0088D6);
 }
 
 @utility highlight-stripe {
-  background-image: linear-gradient(120deg, #00A8FF 0%, #E31919 100%);
+  background-image: linear-gradient(120deg, var(--brand-earth) 0%, #4A2C00 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
