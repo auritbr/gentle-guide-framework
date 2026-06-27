@@ -28,7 +28,7 @@ export function Header() {
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
         <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-gold text-brand-dark font-display font-bold text-base shadow-md">
+          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-earth text-white font-display font-bold text-base shadow-md">
             FH
           </div>
           <div className="leading-tight">
