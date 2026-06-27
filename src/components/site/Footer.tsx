@@ -56,7 +56,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-gold text-brand-dark font-display font-bold">FH</div>
+            <div className="grid h-12 w-12 place-items-center rounded-full bg-brand-earth text-white font-display font-bold">FH</div>
               <div className="font-display text-lg font-bold">Família Hùndésô</div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
@@ -84,19 +84,19 @@ export function Footer() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
               <Mail className="h-4 w-4" /> E-mail
             </h5>
             <p className="mt-2 text-sm text-white/80 break-words">contato@familiahundeso.org.br</p>
           </div>
           <div>
-            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
               <Phone className="h-4 w-4" /> Telefone / WhatsApp
             </h5>
             <p className="mt-2 text-sm text-white/80">(82) 99618-0034</p>
           </div>
           <div>
-            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-earth">
+            <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
               <MapPin className="h-4 w-4" /> Endereço
             </h5>
             <p className="mt-2 text-sm text-white/80 leading-relaxed">
@@ -104,7 +104,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h5 className="text-xs font-bold uppercase tracking-wider text-brand-earth">Conecte-se</h5>
+            <h5 className="text-xs font-bold uppercase tracking-wider text-brand-gold">Conecte-se</h5>
             <div className="mt-3 flex flex-wrap gap-2">
               {[
                 { icon: Instagram, label: "Instagram", href: "#" },
