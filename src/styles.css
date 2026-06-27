@@ -186,12 +186,12 @@ html {
 }
 
 @utility bg-gradient-gold {
-  /* Selo/decoração — marrom institucional sólido */
-  background-image: linear-gradient(135deg, var(--brand-earth), oklch(0.30 0.07 60));
+  /* Selo/decoração — azul institucional com toque terroso (sutil) */
+  background-image: linear-gradient(135deg, var(--brand-gold), var(--brand-earth));
 }
 
 @utility highlight-stripe {
-  background-image: linear-gradient(120deg, var(--brand-earth) 0%, var(--brand-dark) 100%);
+  background-image: linear-gradient(120deg, var(--brand-gold) 0%, var(--brand-earth) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
