@@ -29,7 +29,7 @@ function Contato() {
                 {i:Mail,t:"E-mail",d:"contato@familiahundeso.org.br"},
               ].map(({i:Icon,t,d}) => (
                 <div key={t} className="flex gap-4 rounded-2xl bg-white p-5 shadow-sm">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-gold text-brand-dark">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-cream text-[#7A4900] ring-1 ring-[#7A4900]/15">
                     <Icon className="h-5 w-5"/>
                   </div>
                   <div>
@@ -68,7 +68,7 @@ function Contato() {
             <input placeholder="Telefone" className="w-full rounded-xl border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
             <input placeholder="Assunto" className="w-full rounded-xl border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
             <textarea placeholder="Mensagem" rows={5} className="w-full rounded-xl border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
-            <button className="w-full rounded-full bg-gradient-gold py-3 font-bold text-brand-dark hover:scale-[1.02] transition-transform">Enviar mensagem</button>
+            <button className="w-full rounded-full bg-[#7A4900] py-3 font-bold text-white hover:bg-[#5C3600] transition-colors">Enviar mensagem</button>
           </form>
         </div>
       </section>
