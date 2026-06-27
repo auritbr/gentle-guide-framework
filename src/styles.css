@@ -51,8 +51,10 @@ html {
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --color-brand-dark: var(--brand-dark);
+  --color-brand-darker: var(--brand-darker);
   --color-brand-cream: var(--brand-cream);
   --color-brand-earth: var(--brand-earth);
+  --color-brand-earth-soft: var(--brand-earth-soft);
   --color-brand-gold: var(--brand-gold);
   --color-brand-green: var(--brand-green);
   --color-brand-red: var(--brand-red);
@@ -95,10 +97,12 @@ html {
   --border: oklch(0.90 0.018 75);
   --input: oklch(0.90 0.018 75);
   --ring: oklch(0.70 0.17 235);
-  --brand-dark: oklch(0.17 0.03 55);        /* marrom muito escuro #1F1006 */
+  --brand-dark: oklch(0.26 0.045 60);       /* marrom profundo quente ~ #3A2412 (não preto) */
+  --brand-darker: oklch(0.21 0.04 58);      /* hover/sombras do marrom institucional */
   --brand-cream: oklch(0.965 0.018 75);     /* bege #F7EFE4 */
   --brand-earth: oklch(0.40 0.09 65);       /* marrom oficial #7A4900 */
-  --brand-gold: oklch(0.70 0.17 235);       /* azul #00A8FF — ação/hover/links */
+  --brand-earth-soft: oklch(0.92 0.025 75); /* bege quente para fundos de selo/ícone */
+  --brand-gold: oklch(0.70 0.17 235);       /* azul #00A8FF — destaque pontual */
   --brand-green: oklch(0.40 0.09 65);       /* marrom institucional */
   --brand-red: oklch(0.58 0.22 27);         /* vermelho #E31919 — pontual */
   --font-display: "Poppins", "Inter", system-ui, sans-serif;
@@ -175,26 +179,35 @@ html {
 }
 
 @utility bg-gradient-warm {
-  /* Botão de ação — azul sólido (sem gradiente forte) */
-  background-image: linear-gradient(180deg, var(--brand-gold), var(--brand-gold));
-  background-color: var(--brand-gold);
+  /* Botão de ação principal — marrom institucional quente */
+  background-image: linear-gradient(180deg, var(--brand-earth), var(--brand-dark));
+  background-color: var(--brand-earth);
 }
 
 @utility bg-gradient-earth {
-  /* Seções institucionais — marrom profundo (sutil) */
-  background-image: linear-gradient(135deg, var(--brand-dark), var(--brand-earth));
+  /* Seções institucionais — marrom profundo quente */
+  background-image: linear-gradient(135deg, var(--brand-darker), var(--brand-earth));
 }
 
 @utility bg-gradient-gold {
-  /* Selo/decoração — azul institucional com toque terroso (sutil) */
-  background-image: linear-gradient(135deg, var(--brand-gold), var(--brand-earth));
+  /* Selo/ícones — bege quente neutro (sem azul saturado) */
+  background-image: linear-gradient(135deg, var(--brand-earth-soft), #ffffff);
 }
 
 @utility highlight-stripe {
-  background-image: linear-gradient(120deg, var(--brand-gold) 0%, var(--brand-earth) 100%);
+  background-image: linear-gradient(120deg, var(--brand-earth) 0%, var(--brand-red) 120%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+@utility btn-primary-warm {
+  background-color: var(--brand-earth);
+  color: #ffffff;
+  transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+@utility btn-primary-warm-hover {
+  background-color: var(--brand-dark);
 }
 
 /* ===== Acessibilidade (controles do painel) ===== */
