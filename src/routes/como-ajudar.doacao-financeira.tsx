@@ -40,7 +40,7 @@ function DoacaoFinanceira() {
   return (
     <>
       <PageHero image={HERO_IMG} eyebrow="Como ajudar" title="Doe e fortaleça a" highlight="Família Hùndésô" subtitle="Sua contribuição ajuda a manter projetos sociais, culturais, educativos e comunitários que fortalecem a memória, a ancestralidade e o cuidado com famílias em situação de vulnerabilidade.">
-        <a href="#doar" className="inline-flex items-center gap-2 rounded-full bg-brand-earth px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:bg-brand-dark transition-colors">
+        <a href="#doar" className="inline-flex items-center gap-2 rounded-full bg-gradient-warm px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg hover:brightness-110 transition">
           <Heart className="h-4 w-4" /> Fazer doação
         </a>
       </PageHero>
@@ -102,11 +102,11 @@ function DoacaoFinanceira() {
               <label className="block text-sm font-semibold text-brand-dark mb-3">Frequência</label>
               <div className="grid gap-2 sm:grid-cols-3">
                 {FREQS.map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setFreq(f)}
-                  className={`rounded-xl px-4 py-3 text-sm font-semibold transition-colors ring-1 ${freq === f ? "bg-brand-earth text-white ring-brand-earth" : "bg-white text-brand-dark ring-black/10 hover:bg-brand-earth-soft hover:ring-brand-earth/40"}`}
-                >
+                  <button
+                    key={f}
+                    onClick={() => setFreq(f)}
+                    className={`rounded-xl px-4 py-3 text-sm font-semibold transition ring-1 ${freq === f ? "bg-brand-earth text-white ring-brand-earth" : "bg-white text-brand-dark ring-black/10 hover:ring-brand-earth"}`}
+                  >
                     {f}
                   </button>
                 ))}
@@ -115,7 +115,7 @@ function DoacaoFinanceira() {
 
             <button
               type="button"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-earth px-8 py-4 text-base font-bold uppercase tracking-wider text-white shadow-md hover:bg-brand-dark transition-colors"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-warm px-8 py-4 text-base font-bold uppercase tracking-wider text-white shadow-lg hover:brightness-110 transition"
             >
               <Heart className="h-5 w-5" /> Continuar doação
             </button>
@@ -133,7 +133,7 @@ function DoacaoFinanceira() {
                   <img src={c.img} alt={c.titulo} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-earth-soft text-brand-earth ring-1 ring-brand-earth/15">
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-gold text-brand-dark">
                     <c.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 font-display text-xl font-bold text-brand-dark">{c.titulo}</h3>
@@ -151,7 +151,7 @@ function DoacaoFinanceira() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PORQUE.map((p) => (
               <div key={p.titulo} className="text-center">
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand-earth-soft text-brand-earth ring-1 ring-brand-earth/15">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-gradient-warm text-white shadow-md">
                   <p.icon className="h-7 w-7" />
                 </div>
                 <p className="mt-4 font-display text-lg font-semibold text-brand-dark leading-snug">{p.titulo}</p>

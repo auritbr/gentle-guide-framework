@@ -107,13 +107,13 @@ function NoticiaPage() {
         </section>
       )}
 
-      <section className="py-20 bg-brand-cream text-center border-t border-brand-earth/10">
+      <section className="py-20 bg-gradient-warm text-white text-center">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark">Fortaleça essa história</h2>
-          <p className="mt-4 text-foreground/75 text-lg">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold">Fortaleça essa história</h2>
+          <p className="mt-4 text-white/90 text-lg">
             Apoie a Família Hùndésô e contribua para a continuidade de ações culturais, sociais e comunitárias.
           </p>
-          <Link to="/como-ajudar/doacao-financeira" className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-earth px-7 py-3 font-bold text-white hover:bg-brand-dark transition-colors shadow-md">
+          <Link to="/como-ajudar" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-bold text-brand-dark hover:bg-brand-gold transition">
             <Heart className="h-4 w-4" /> Apoie agora
           </Link>
         </div>

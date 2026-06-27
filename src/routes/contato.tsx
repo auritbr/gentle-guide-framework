@@ -28,8 +28,8 @@ function Contato() {
                 {i:Phone,t:"Fone",d:"(82) 99618-0034"},
                 {i:Mail,t:"E-mail",d:"contato@familiahundeso.org.br"},
               ].map(({i:Icon,t,d}) => (
-                <div key={t} className="flex gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-brand-earth/10">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-earth-soft text-brand-earth ring-1 ring-brand-earth/15">
+                <div key={t} className="flex gap-4 rounded-2xl bg-white p-5 shadow-sm">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-gold text-brand-dark">
                     <Icon className="h-5 w-5"/>
                   </div>
                   <div>
@@ -43,7 +43,7 @@ function Contato() {
               <div className="font-display font-bold text-brand-dark mb-3">Redes sociais</div>
               <div className="flex gap-3">
                 {[Instagram, Facebook, Youtube].map((Icon, i) => (
-                  <a key={i} href="#" className="grid h-11 w-11 place-items-center rounded-full bg-brand-earth text-white hover:bg-brand-dark transition-colors">
+                  <a key={i} href="#" className="grid h-11 w-11 place-items-center rounded-full bg-brand-dark text-white hover:bg-brand-earth transition">
                     <Icon className="h-4 w-4"/>
                   </a>
                 ))}
@@ -68,7 +68,7 @@ function Contato() {
             <input placeholder="Telefone" className="w-full rounded-xl border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
             <input placeholder="Assunto" className="w-full rounded-xl border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
             <textarea placeholder="Mensagem" rows={5} className="w-full rounded-xl border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold"/>
-            <button className="w-full rounded-full bg-brand-earth py-3 font-bold text-white hover:bg-brand-dark transition-colors shadow-sm">Enviar mensagem</button>
+            <button className="w-full rounded-full bg-gradient-gold py-3 font-bold text-brand-dark hover:scale-[1.02] transition-transform">Enviar mensagem</button>
           </form>
         </div>
       </section>
