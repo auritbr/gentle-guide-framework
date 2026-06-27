@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { IMAGES } from "@/data/site";
 
@@ -145,6 +146,32 @@ const GALERIAS: GaleriaAno[] = [
 function GaleriaPage() {
   const [anoSelecionado, setAnoSelecionado] = useState<number>(GALERIAS[0].ano);
   const atual = GALERIAS.find((g) => g.ano === anoSelecionado) ?? GALERIAS[0];
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const close = useCallback(() => setOpenIndex(null), []);
+  const prev = useCallback(
+    () => setOpenIndex((i) => (i === null ? null : (i - 1 + atual.imagens.length) % atual.imagens.length)),
+    [atual.imagens.length]
+  );
+  const next = useCallback(
+    () => setOpenIndex((i) => (i === null ? null : (i + 1) % atual.imagens.length)),
+    [atual.imagens.length]
+  );
+
+  useEffect(() => {
+    if (openIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openIndex, close, prev, next]);
+
+  useEffect(() => {
+    setOpenIndex(null);
+  }, [anoSelecionado]);
 
   return (
     <>
@@ -184,21 +211,62 @@ function GaleriaPage() {
           {/* Grid */}
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {atual.imagens.map((img, i) => (
-              <div
+              <button
                 key={`${atual.ano}-${i}`}
-                className="overflow-hidden rounded-2xl bg-brand-cream shadow-sm ring-1 ring-brand-earth/10 group"
+                type="button"
+                onClick={() => setOpenIndex(i)}
+                aria-label={`Ampliar imagem: ${img.alt}`}
+                className="overflow-hidden rounded-2xl bg-brand-cream shadow-sm ring-1 ring-brand-earth/10 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark"
               >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className="h-[240px] sm:h-[260px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-[240px] sm:h-[260px] w-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-zoom-in"
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {openIndex !== null && (
+        <div
+          className="fixed inset-0 z-[1100] flex items-center justify-center bg-black/90 p-4 animate-in fade-in duration-200"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Imagem ampliada"
+        >
+          <button
+            onClick={close}
+            aria-label="Fechar"
+            className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-brand-dark hover:bg-white transition"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            aria-label="Imagem anterior"
+            className="absolute left-4 top-1/2 -translate-y-1/2 grid h-12 w-12 place-items-center rounded-full bg-white/90 text-brand-dark hover:bg-white transition"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <img
+            src={atual.imagens[openIndex].src}
+            alt={atual.imagens[openIndex].alt}
+            className="max-h-[85vh] max-w-[92vw] rounded-xl object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            aria-label="Próxima imagem"
+            className="absolute right-4 top-1/2 -translate-y-1/2 grid h-12 w-12 place-items-center rounded-full bg-white/90 text-brand-dark hover:bg-white transition"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+      )}
     </>
   );
 }
