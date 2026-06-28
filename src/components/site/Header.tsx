@@ -56,7 +56,7 @@ export function Header() {
                       <Link
                         key={c.to}
                         to={c.to}
-                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted hover:text-brand-earth"
+                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted hover:text-brand-gold"
                       >
                         {c.label}
                       </Link>
