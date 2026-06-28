@@ -12,7 +12,7 @@ const IMPACTOS = [
 
 const ITENS = [
   { icon: Shirt, titulo: "Vestuário", texto: "Roupas masculinas, femininas e infantis, especialmente peças confortáveis para o dia a dia no campo.", grad: "bg-gradient-warm" },
-  { icon: Footprints, titulo: "Calçados", texto: "Tênis, sandálias e sapatos de todos os tamanhos.", grad: "bg-gradient-earth" },
+  { icon: Footprints, titulo: "Calçados", texto: "Tênis, sandálias e sapatos de todos os tamanhos.", grad: "bg-brand-gold-soft border-y border-brand-gold/20" },
   { icon: Backpack, titulo: "Acessórios", texto: "Cintos, bolsas, mochilas e bonés.", grad: "bg-gradient-gold text-brand-dark" },
   { icon: ToyBrick, titulo: "Infantil", texto: "Brinquedos, jogos e livros educativos para as crianças da região.", grad: "bg-brand-dark" },
 ];
@@ -122,15 +122,15 @@ function DoacaoItens() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-16 bg-gradient-earth text-white">
+      <section className="py-14 sm:py-16 bg-brand-gold-soft border-y border-brand-gold/20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl sm:text-4xl font-bold">Doe com consciência. Ajude com propósito.</h2>
-          <p className="mt-4 text-white/85 text-lg">Sua doação pode gerar cuidado, renda, sustentabilidade e dignidade para famílias atendidas pela Família Hùndésô.</p>
+          <p className="mt-4 text-brand-dark/70 text-lg">Sua doação pode gerar cuidado, renda, sustentabilidade e dignidade para famílias atendidas pela Família Hùndésô.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-cream transition">
+            <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-[#0077B6] transition-colors">
               <MessageCircle className="h-4 w-4" /> Fale conosco
             </Link>
-            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-white/20 transition">
+            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full border border-brand-gold/50 px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-gold/10 transition">
               Conhecer projetos
             </Link>
           </div>
