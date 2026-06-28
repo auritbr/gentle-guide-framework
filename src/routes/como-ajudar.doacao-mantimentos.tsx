@@ -90,15 +90,15 @@ function DoacaoMantimentos() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-16 bg-brand-gold-soft border-y border-brand-gold/20">
+      <section className="py-14 sm:py-16 bg-gradient-earth text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl sm:text-4xl font-bold">Sua doação alimenta cuidado, dignidade e esperança</h2>
-          <p className="mt-4 text-brand-dark/70 text-lg">Contribua com mantimentos e ajude a fortalecer ações de acolhimento comunitário.</p>
+          <p className="mt-4 text-white/85 text-lg">Contribua com mantimentos e ajude a fortalecer ações de acolhimento comunitário.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-[#0077B6] transition-colors">
+            <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-cream transition">
               <MessageCircle className="h-4 w-4" /> Fale conosco
             </Link>
-            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full border border-brand-gold/50 px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-gold/10 transition">
+            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-white/20 transition">
               Ver projetos
             </Link>
           </div>

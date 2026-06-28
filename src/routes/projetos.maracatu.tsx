@@ -129,16 +129,16 @@ function MaracatuPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 lg:py-16 bg-brand-gold-soft border-y border-brand-gold/20">
+      <section className="py-14 lg:py-16 bg-gradient-earth">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-dark leading-tight text-balance">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight text-balance">
             Cultura, axé e resistência afro-alagoana
           </h2>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-brand-gold/50 px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-gold/10 transition-colors">
+            <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-white/10 transition-colors">
               <ArrowLeft className="h-4 w-4" /> Voltar para página inicial
             </Link>
-            <Link to="/contato" className="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#0077B6] transition-colors">
+            <Link to="/contato" className="inline-flex items-center justify-center rounded-full bg-gradient-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:opacity-90 transition-opacity">
               Fale conosco
             </Link>
           </div>
