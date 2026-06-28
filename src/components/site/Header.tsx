@@ -28,16 +28,12 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
-        <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+        <Link to="/" className="flex items-center group shrink-0" aria-label="Família Hùndésô - Início">
           <img
             src={logoAsset.url}
             alt="Família Hùndésô - Tradição, Cultura e Comunidade"
             className="h-10 w-auto shrink-0 object-contain sm:h-12 lg:h-14"
           />
-          <div className="leading-tight">
-            <div className="font-display text-[15px] font-bold text-white sm:text-base">Família Hùndésô</div>
-            <div className="text-[9px] uppercase tracking-[0.18em] text-brand-gold/80">Tradição · Cultura · Comunidade</div>
-          </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0.5">
