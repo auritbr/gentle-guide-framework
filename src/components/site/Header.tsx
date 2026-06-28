@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV } from "@/data/site";
+import logoAsset from "@/assets/logo-familia-hundeso.png.asset.json";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -28,9 +29,11 @@ export function Header() {
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
         <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-earth text-white font-display font-bold text-base shadow-md">
-            FH
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Família Hùndésô - Tradição, Cultura e Comunidade"
+            className="h-10 w-auto shrink-0 object-contain sm:h-12 lg:h-14"
+          />
           <div className="leading-tight">
             <div className="font-display text-[15px] font-bold text-white sm:text-base">Família Hùndésô</div>
             <div className="text-[9px] uppercase tracking-[0.18em] text-brand-gold/80">Tradição · Cultura · Comunidade</div>
