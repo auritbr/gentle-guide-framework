@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Youtube, Linkedin, MessageCircle, Mail, MapPin, Phone } from "lucide-react";
-import logoAsset from "@/assets/logo-familia-hundeso.png.asset.json";
 
 const COLUMNS = [
   {
@@ -57,8 +56,8 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
             <img
-              src={logoAsset.url}
-              alt="Família Hùndésô - Tradição, Cultura e Comunidade"
+              src="/logos/logo-familia-hundeso.png"
+              alt="Família Hùndésô"
               className="h-20 w-auto object-contain"
             />
           </div>
