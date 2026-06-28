@@ -268,19 +268,19 @@ function Index() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-14 sm:py-20 bg-gradient-to-br from-brand-dark via-brand-earth to-brand-dark text-white">
+      <section className="py-14 sm:py-20 bg-brand-gold-soft border-y border-brand-gold/20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-balance leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-balance leading-tight text-brand-dark">
             Fortaleça a memória, a cultura e a comunidade
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed">
+          <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-brand-dark/70 leading-relaxed">
             Acompanhe as ações da Família Hùndésô, conheça sua trajetória e apoie a continuidade de projetos sociais, culturais, religiosos e comunitários.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full bg-white text-brand-dark px-7 py-3 text-sm font-bold hover:bg-brand-cream transition">
+            <Link to="/projetos" className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-7 py-3 text-sm font-bold text-white hover:bg-[#0077B6] transition-colors shadow-md">
               Conhecer projetos <ArrowRight className="h-4 w-4"/>
             </Link>
-            <Link to="/como-ajudar/doacao-financeira" className="inline-flex items-center gap-2 rounded-full border-2 border-white/80 px-7 py-3 text-sm font-bold text-white hover:bg-white/10 transition">
+            <Link to="/como-ajudar/doacao-financeira" className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold/50 px-7 py-3 text-sm font-bold text-brand-dark hover:bg-brand-gold/10 transition-colors">
               Como ajudar
             </Link>
           </div>
