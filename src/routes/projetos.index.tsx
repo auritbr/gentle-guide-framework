@@ -159,16 +159,16 @@ function ProjetosPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-14 lg:py-16 bg-gradient-earth">
+      <section className="py-14 lg:py-16 bg-brand-gold-soft border-y border-brand-gold/20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white leading-tight text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-dark leading-tight text-balance">
             Conheça, acompanhe e apoie nossos projetos
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-brand-dark/70 leading-relaxed">
             Cada ação fortalece a memória, a cidadania, a cultura e o cuidado comunitário nos territórios onde a Família Hùndésô atua.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link to="/contato" className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-white/10 transition-colors">
+            <Link to="/contato" className="inline-flex items-center justify-center rounded-full border border-brand-gold/50 px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-gold/10 transition-colors">
               Fale conosco
             </Link>
             <Link to="/como-ajudar" className="inline-flex items-center justify-center rounded-full bg-gradient-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:opacity-90 transition-opacity">
