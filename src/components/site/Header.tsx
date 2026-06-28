@@ -28,7 +28,7 @@ export function Header() {
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
         <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-gold text-white font-display font-bold text-base shadow-md">
+          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-earth text-white font-display font-bold text-base shadow-md">
             FH
           </div>
           <div className="leading-tight">
@@ -56,7 +56,7 @@ export function Header() {
                       <Link
                         key={c.to}
                         to={c.to}
-                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted hover:text-brand-gold"
+                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted hover:text-brand-earth"
                       >
                         {c.label}
                       </Link>

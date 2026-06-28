@@ -51,12 +51,12 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#002F45] text-white border-t border-white/10">
+    <footer className="bg-[#3A2208] text-white border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-full bg-brand-gold text-white font-display font-bold">FH</div>
+            <div className="grid h-12 w-12 place-items-center rounded-full bg-brand-earth text-white font-display font-bold">FH</div>
               <div className="font-display text-lg font-bold">Família Hùndésô</div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">

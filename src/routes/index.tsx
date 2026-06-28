@@ -5,7 +5,6 @@ import { useState } from "react";
 import { IMAGES, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
-import { PartnerLogoCard, PARTNERS } from "@/components/site/PartnerLogoCard";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -244,28 +243,6 @@ function Index() {
 
       {/* Calendário Litúrgico (prévia) */}
       <CalendarPreview />
-
-      {/* Parceiros e apoios */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="text-xs uppercase tracking-[0.25em] text-brand-earth font-semibold">Rede de apoio</div>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark text-balance leading-[1.1]">
-              Parceiros e apoios
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-foreground/70 leading-relaxed">
-              Instituições, redes e iniciativas que fortalecem a atuação social, cultural, comunitária e ancestral da Família Hùndésô.
-            </p>
-          </div>
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-5">
-            {PARTNERS.map((p) => (
-              <li key={p.name} className="h-full">
-                <PartnerLogoCard {...p} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       {/* CTA Final */}
       <section className="py-14 sm:py-20 bg-gradient-to-br from-brand-dark via-brand-earth to-brand-dark text-white">
