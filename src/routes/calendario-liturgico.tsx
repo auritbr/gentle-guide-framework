@@ -107,19 +107,19 @@ function CalendarioLiturgico() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-16 bg-gradient-earth">
+      <section className="py-14 sm:py-16 bg-brand-gold-soft border-y border-brand-gold/20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-balance leading-tight">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-dark text-balance leading-tight">
             Acompanhe a vivência litúrgica da Família Hùndésô
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-brand-dark/70 leading-relaxed">
             Entre em contato para saber mais sobre a programação, os ritos e as atividades abertas à comunidade.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-white text-brand-dark px-6 py-3 text-sm font-bold hover:bg-brand-cream transition">
               Fale conosco <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link to="/" className="inline-flex items-center gap-2 rounded-full border-2 border-white/80 px-6 py-3 text-sm font-bold text-white hover:bg-white/10 transition">
+            <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-brand-gold/50 px-6 py-3 text-sm font-bold text-brand-dark hover:bg-brand-gold/10 transition">
               <ArrowLeft className="h-4 w-4" /> Voltar para página inicial
             </Link>
           </div>

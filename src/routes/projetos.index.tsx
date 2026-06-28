@@ -171,7 +171,7 @@ function ProjetosPage() {
             <Link to="/contato" className="inline-flex items-center justify-center rounded-full border border-brand-gold/50 px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-gold/10 transition-colors">
               Fale conosco
             </Link>
-            <Link to="/como-ajudar" className="inline-flex items-center justify-center rounded-full bg-gradient-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:opacity-90 transition-opacity">
+            <Link to="/como-ajudar" className="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#0077B6] transition-colors">
               Apoie agora
             </Link>
           </div>

@@ -60,7 +60,7 @@ const ITENS = [
     icon: Footprints,
     titulo: "Calçados",
     texto: "Tênis, sandálias e sapatos de todos os tamanhos.",
-    grad: "bg-gradient-earth",
+    grad: "bg-brand-gold-soft border-y border-brand-gold/20",
   },
   {
     icon: Backpack,
@@ -410,7 +410,7 @@ function PontoDeColeta() {
       </section>
 
       {/* CTA final */}
-      <section className="py-14 sm:py-16 bg-gradient-earth text-white">
+      <section className="py-14 sm:py-16 bg-brand-gold-soft border-y border-brand-gold/20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-[28px] sm:text-[36px] lg:text-[42px] font-bold text-balance leading-[1.15]">
             Doe com consciência. Ajude com propósito.
