@@ -18,9 +18,12 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all bg-white border-b border-[#00A8FF]/15 ${
-        scrolled ? "shadow-md" : "shadow-sm"
+      className={`fixed inset-x-0 top-0 z-50 transition-all backdrop-blur-xl border-b ${
+        scrolled
+          ? "bg-white/80 border-[#00A8FF]/20 shadow-[0_8px_24px_-12px_rgba(0,63,102,0.18)]"
+          : "bg-white/65 border-white/40 shadow-[0_4px_20px_-12px_rgba(0,63,102,0.12)]"
       }`}
+      style={{ WebkitBackdropFilter: "blur(16px) saturate(140%)" }}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
         <Link to="/" className="flex items-center group shrink-0" aria-label="Família Hùndésô - Início">
