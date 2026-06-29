@@ -60,6 +60,11 @@ export function YouTubeSection() {
           </a>
         </div>
 
+        {VIDEOS.length === 0 ? (
+          <div className="mt-10 rounded-2xl border border-dashed border-[#00A8FF]/30 bg-white p-10 text-center text-[#003F66]/70">
+            Os vídeos recentes serão exibidos aqui em breve.
+          </div>
+        ) : (
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {VIDEOS.map((v, i) => {
             const href = `https://www.youtube.com/watch?v=${v.id}`;
@@ -100,6 +105,7 @@ export function YouTubeSection() {
             );
           })}
         </div>
+        )}
       </div>
     </section>
   );
