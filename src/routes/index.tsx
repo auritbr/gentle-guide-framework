@@ -6,6 +6,7 @@ import { IMAGES, NOTICIAS } from "@/data/site";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { NewsCard } from "@/components/site/NewsCard";
 import { YouTubeSection } from "@/components/site/YouTubeSection";
+import { PartnersSection } from "@/components/site/PartnersSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -247,6 +248,9 @@ function Index() {
 
       {/* YouTube */}
       <YouTubeSection />
+
+      {/* Parceiros e apoios */}
+      <PartnersSection />
 
       {/* CTA Final */}
       <section className="py-14 sm:py-20 bg-gradient-to-br from-brand-dark via-brand-earth to-brand-dark text-white">
