@@ -18,12 +18,16 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all backdrop-blur-xl border-b ${
-        scrolled
-          ? "bg-white/80 border-[#00A8FF]/20 shadow-[0_8px_24px_-12px_rgba(0,63,102,0.18)]"
-          : "bg-white/65 border-white/40 shadow-[0_4px_20px_-12px_rgba(0,63,102,0.12)]"
-      }`}
-      style={{ WebkitBackdropFilter: "blur(16px) saturate(140%)" }}
+      className="fixed inset-x-0 top-0 z-50 transition-all"
+      style={{
+        background: scrolled ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.72)",
+        backdropFilter: "blur(14px) saturate(150%)",
+        WebkitBackdropFilter: "blur(14px) saturate(150%)",
+        borderBottom: "1px solid rgba(0,168,255,0.14)",
+        boxShadow: scrolled
+          ? "0 10px 28px rgba(0,63,102,0.10)"
+          : "0 8px 24px rgba(0,0,0,0.06)",
+      }}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
         <Link to="/" className="flex items-center group shrink-0" aria-label="Família Hùndésô - Início">
