@@ -425,7 +425,7 @@ function QuemSomos() {
           aria-hidden
           className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-dark via-[#3a1d10] to-brand-dark/90" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-dark via-[#003F66] to-brand-dark/90" />
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
             Missão
@@ -494,7 +494,7 @@ function QuemSomos() {
       <section className="bg-white py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <article className="group relative grid overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 lg:grid-cols-[1.1fr_1fr] lg:max-h-[340px]">
-            <div className="relative isolate flex flex-col justify-between gap-5 bg-[linear-gradient(135deg,#3A1D10_0%,#6B3F24_55%,#9A4A2F_100%)] p-6 text-white sm:p-8 lg:p-10">
+            <div className="relative isolate flex flex-col justify-between gap-5 bg-[linear-gradient(135deg,#003F66_0%,#005F8F_55%,#0090DB_100%)] p-6 text-white sm:p-8 lg:p-10">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold backdrop-blur">
                   <Flame className="h-3.5 w-3.5" aria-hidden /> Tradição e ancestralidade
@@ -533,7 +533,7 @@ function QuemSomos() {
 
       {/* 10. CTA FINAL */}
       <section className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#9A4A2F_0%,#6B3F24_55%,#C9953B_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#0090DB_0%,#005F8F_55%,#00A8FF_100%)]" />
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-[26px] font-bold leading-tight text-white sm:text-[32px] lg:text-[38px]">
             Fortalecer a Família Hùndésô é fortalecer memória, cultura e
