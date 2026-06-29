@@ -76,7 +76,7 @@ export function AccessibilityPanel({
         onClick={(e) => e.stopPropagation()}
         className="w-full sm:w-[360px] sm:ml-20 bg-brand-cream sm:rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden flex flex-col"
       >
-        <div className="flex items-center justify-between gap-2 bg-[#C75A32] text-white px-5 py-4">
+        <div className="flex items-center justify-between gap-2 bg-[#00A8FF] text-white px-5 py-4">
           <h2 id="a11y-title" className="font-display text-lg font-bold">Acessibilidade</h2>
           <button onClick={onClose} aria-label="Fechar painel de acessibilidade" className="grid h-9 w-9 place-items-center rounded-full hover:bg-white/15">
             <X className="h-4 w-4" />
@@ -130,7 +130,7 @@ function Toggle({ icon: Icon, label, checked, onChange }: { icon: typeof Contras
       role="switch"
       aria-checked={checked}
       onClick={() => onChange(!checked)}
-      className={`flex items-center justify-between w-full rounded-xl px-3 py-2.5 text-sm font-semibold transition ring-1 ${checked ? "bg-[#C75A32] text-white ring-[#C75A32]" : "bg-white text-brand-dark ring-brand-earth/15 hover:bg-brand-gold/20"}`}
+      className={`flex items-center justify-between w-full rounded-xl px-3 py-2.5 text-sm font-semibold transition ring-1 ${checked ? "bg-[#00A8FF] text-white ring-[#00A8FF]" : "bg-white text-brand-dark ring-brand-earth/15 hover:bg-brand-gold/20"}`}
     >
       <span className="flex items-center gap-2"><Icon className="h-4 w-4" /> {label}</span>
       <span className={`grid h-5 w-9 rounded-full p-0.5 transition ${checked ? "bg-white/30" : "bg-brand-earth/20"}`}>

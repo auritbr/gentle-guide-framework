@@ -162,7 +162,7 @@ function NossoCulto() {
               </p>
             </div>
           </div>
-          <aside className="rounded-3xl bg-gradient-to-br from-brand-earth/95 via-[#6B3F24] to-brand-dark p-8 text-white shadow-xl sm:p-10">
+          <aside className="rounded-3xl bg-gradient-to-br from-brand-earth/95 via-[#005F8F] to-brand-dark p-8 text-white shadow-xl sm:p-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-gold">
               Fundamentos
             </div>
@@ -256,7 +256,7 @@ function NossoCulto() {
 
       {/* CTA FINAL */}
       <section className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#9A4A2F_0%,#6B3F24_55%,#C9953B_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#0090DB_0%,#005F8F_55%,#00A8FF_100%)]" />
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-[26px] font-bold leading-tight text-white sm:text-[32px] lg:text-[38px]">
             Ancestralidade que orienta, fortalece e preserva

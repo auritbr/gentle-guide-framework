@@ -113,7 +113,7 @@ function NoticiaPage() {
           <p className="mt-4 text-foreground/75 text-lg">
             Apoie a Família Hùndésô e contribua para a continuidade de ações culturais, sociais e comunitárias.
           </p>
-          <Link to="/como-ajudar" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#7A4900] px-7 py-3 font-bold text-white hover:bg-[#5C3600] transition-colors">
+          <Link to="/como-ajudar" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#005F8F] px-7 py-3 font-bold text-white hover:bg-[#003F66] transition-colors">
             <Heart className="h-4 w-4" /> Apoie agora
           </Link>
         </div>
