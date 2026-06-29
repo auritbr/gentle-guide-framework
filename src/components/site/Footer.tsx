@@ -51,7 +51,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#7A4900] text-white border-t-2 border-[#00A8FF]/40">
+    <footer className="bg-[#003F66] text-white border-t-2 border-[#00A8FF]/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
@@ -121,7 +121,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/20 pt-6 text-center text-xs text-white/70 space-y-1">
+      </div>
+      <div className="bg-[#7A4900] text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-center text-xs text-white space-y-1">
           <div>CNPJ: 05.786.767/0001-01 — Família Hùndésô</div>
           <div>© 2026 Família Hùndésô. Todos os direitos reservados.</div>
         </div>
