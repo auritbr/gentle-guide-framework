@@ -18,12 +18,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all ${
-        scrolled
-          ? "bg-brand-dark/95 backdrop-blur-md shadow-lg"
-          : isHome
-            ? "bg-brand-dark/85 backdrop-blur-md shadow-md"
-            : "bg-brand-dark/60 backdrop-blur-sm"
+      className={`fixed inset-x-0 top-0 z-50 transition-all bg-white border-b border-[#00A8FF]/15 ${
+        scrolled ? "shadow-md" : "shadow-sm"
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[88px] lg:px-8">
@@ -40,8 +36,8 @@ export function Header() {
             <div key={item.to} className="relative group">
               <Link
                 to={item.to}
-                className="flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-medium text-white/90 hover:text-brand-gold transition-colors"
-                activeProps={{ className: "text-brand-gold" }}
+                className="flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-medium text-[#003F66] hover:text-[#00A8FF] transition-colors"
+                activeProps={{ className: "text-[#00A8FF]" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
@@ -49,12 +45,12 @@ export function Header() {
               </Link>
               {item.children && (
                 <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-                  <div className="min-w-[220px] rounded-xl bg-white p-2 shadow-xl ring-1 ring-black/5">
+                  <div className="min-w-[220px] rounded-xl bg-white p-2 shadow-xl ring-1 ring-[#00A8FF]/15">
                     {item.children.map((c) => (
                       <Link
                         key={c.to}
                         to={c.to}
-                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted hover:text-brand-earth"
+                        className="block rounded-lg px-3 py-2 text-sm font-medium text-[#003F66] hover:bg-[#E6F7FF] hover:text-[#00A8FF]"
                       >
                         {c.label}
                       </Link>
@@ -69,13 +65,13 @@ export function Header() {
         <div className="flex items-center gap-2 shrink-0">
           <Link
             to="/como-ajudar/doacao-financeira"
-            className="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-warm px-4 py-2 text-[13px] font-bold uppercase tracking-[0.08em] text-white shadow-md hover:brightness-110 transition"
+            className="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#00A8FF] px-4 py-2 text-[13px] font-bold uppercase tracking-[0.08em] text-white shadow-md hover:bg-[#0086CC] transition"
           >
             Apoie Agora
           </Link>
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden grid h-10 w-10 place-items-center rounded-md text-white hover:bg-white/10"
+            className="lg:hidden grid h-10 w-10 place-items-center rounded-md text-[#003F66] hover:bg-[#E6F7FF]"
             aria-label="Menu"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -84,25 +80,25 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-white/10 bg-brand-dark/95 backdrop-blur-md">
+        <div className="lg:hidden border-t border-[#00A8FF]/15 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-4 space-y-1">
             {NAV.map((item) => (
               <div key={item.to}>
                 <Link
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/10"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-[#003F66] hover:bg-[#E6F7FF]"
                 >
                   {item.label}
                 </Link>
                 {item.children && (
-                  <div className="ml-3 mt-1 space-y-1 border-l border-white/10 pl-3">
+                  <div className="ml-3 mt-1 space-y-1 border-l border-[#00A8FF]/20 pl-3">
                     {item.children.map((c) => (
                       <Link
                         key={c.to}
                         to={c.to}
                         onClick={() => setOpen(false)}
-                        className="block py-1.5 text-sm text-white/70 hover:text-brand-gold"
+                        className="block py-1.5 text-sm text-[#003F66]/75 hover:text-[#00A8FF]"
                       >
                         {c.label}
                       </Link>
@@ -114,7 +110,7 @@ export function Header() {
             <Link
               to="/como-ajudar/doacao-financeira"
               onClick={() => setOpen(false)}
-              className="mt-3 block rounded-full bg-gradient-warm px-5 py-3 text-center text-sm font-bold uppercase tracking-wider text-white"
+              className="mt-3 block rounded-full bg-[#00A8FF] px-5 py-3 text-center text-sm font-bold uppercase tracking-wider text-white hover:bg-[#0086CC]"
             >
               Apoie Agora
             </Link>
