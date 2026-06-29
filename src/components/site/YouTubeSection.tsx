@@ -7,10 +7,30 @@ const CHANNEL_URL = "https://www.youtube.com/channel/UCRcTfvtpbFoRsGNdjK9KAGQ?su
  * Para atualizar: substitua `id` pelo ID do vídeo (parte após v=) e o `titulo`.
  * Thumbnail é gerada automaticamente a partir do ID.
  */
-const VIDEOS: { id: string; titulo: string; descricao?: string }[] = [
-  { id: "dQw4w9WgXcQ", titulo: "Acompanhe os registros mais recentes da Família Hùndésô", descricao: "Conteúdos audiovisuais do canal" },
-  { id: "dQw4w9WgXcQ", titulo: "Celebrações, projetos e ações comunitárias", descricao: "Memória, cultura e ancestralidade" },
-  { id: "dQw4w9WgXcQ", titulo: "Bastidores das ações culturais e religiosas", descricao: "Tradição e atuação comunitária" },
+/**
+ * Vídeos reais do canal oficial UCRcTfvtpbFoRsGNdjK9KAGQ.
+ * Atualize manualmente conforme novos vídeos forem publicados, mantendo
+ * apenas IDs que pertençam ao canal oficial.
+ */
+const VIDEOS: { id: string; titulo: string; descricao?: string; publishedAt?: string }[] = [
+  {
+    id: "8HB_zL01QG8",
+    titulo: "Encerramento da 15ª Mostra de Cinema e Direitos Humanos",
+    descricao: "Cine Rural do Ponto de Cultura Família Hùndésô na Mostra de Direitos Humanos.",
+    publishedAt: "2026-06-17",
+  },
+  {
+    id: "qDTCzDw6_rE",
+    titulo: "2º Dia da 15ª Mostra de Cinema e Direitos Humanos e Emergência Climática",
+    descricao: "Reflexão, cultura e fortalecimento comunitário na Comunidade Riacho Branco.",
+    publishedAt: "2026-06-10",
+  },
+  {
+    id: "1MWpuppQFYk",
+    titulo: "1º Dia da 15ª Mostra de Cinema e Direitos Humanos e Emergência Climática",
+    descricao: "Abertura da mostra com famílias da Comunidade Riacho Branco.",
+    publishedAt: "2026-06-10",
+  },
 ];
 
 export function YouTubeSection() {
@@ -40,6 +60,11 @@ export function YouTubeSection() {
           </a>
         </div>
 
+        {VIDEOS.length === 0 ? (
+          <div className="mt-10 rounded-2xl border border-dashed border-[#00A8FF]/30 bg-white p-10 text-center text-[#003F66]/70">
+            Os vídeos recentes serão exibidos aqui em breve.
+          </div>
+        ) : (
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {VIDEOS.map((v, i) => {
             const href = `https://www.youtube.com/watch?v=${v.id}`;
@@ -80,6 +105,7 @@ export function YouTubeSection() {
             );
           })}
         </div>
+        )}
       </div>
     </section>
   );
